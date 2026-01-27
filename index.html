@@ -167,6 +167,7 @@ figure img{width:100%;height:100%;object-fit:cover}
   }
 }
 
+
 .name{font-size:.95rem}
 .price{font-size:.85rem;color:var(--accent)}
 /* NAV */
@@ -175,7 +176,7 @@ figure img{width:100%;height:100%;object-fit:cover}
   justify-content:center;
   gap:15px;
   flex-wrap:wrap;
-  margin-top:18px;
+  margin-top:18px; /* FIX */
 }
 
 .nav-buttons a{
@@ -189,6 +190,14 @@ figure img{width:100%;height:100%;object-fit:cover}
   transition:.3s;
 }
 
+/* visible active state for current page */
+.nav-buttons a.active,
+.nav-buttons a[aria-current="page"]{
+  background:var(--hover-border);
+  color:#1e2f2a;
+  transform:none;
+}
+
 .nav-buttons a:hover{
   background:var(--hover-border);
   color:#1e2f2a;
@@ -199,42 +208,64 @@ figure img{width:100%;height:100%;object-fit:cover}
 
 <body>
 <main>
+
 <header>
+  
+
+  <!-- HEADER -->
   <div class="h1-container">
     <h1>Welcome to Triple Two Loresho</h1>
-    <p class="location">222 Loresho, Nairobi</p>
-    <div class="header-icons">
-      <a href="https://wa.me/qr/7454VDD2KGEVE1" aria-label="WhatsApp">💬</a>
-      <a href="https://www.instagram.com/tripletwoloresho?igsh=Mm8zdnEwMW1kanB1" aria-label="Instagram">📸</a>
-      <a href="tel:+254735838772" aria-label="Call">📞</a>
-      <a href="info.html" aria-label="Info">ℹ️</a>
-    </div>
-    <div class="nav-buttons">
-      <a href="index.html" class="active">🍽 Food</a>
-      <a href="drinks.html">🥂 Drinks</a>
-      <a href="accomodation.html">🏨 Accommodation</a>
-    </div>
+  <p class="location">222 Loresho, Nairobi</p>
+
+   <div class="header-icons">
+  <a href="https://wa.me/2547XXXXXXXX" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+  <a href="https://instagram.com/yourpage" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
+  <a href="tel:+2547XXXXXXXX" aria-label="Call">📞</a>
+  <a href="info.html" aria-label="Info">ℹ️</a>
+</div>
+
+<!-- NAVIGATION BUTTONS -->
+    <nav aria-label="Main">
+      <div class="nav-buttons">
+        <a href="index.html" class="active" aria-current="page">🍽 Food</a>
+        <a href="drinks.html">🥂 Drinks</a>
+        <a href="accommodation.html">🏨 Accommodation</a>
+      </div>
+    </nav>
+
+
   </div>
 </header>
+
 
 <!-- CHIPS & SIDES -->
 <section>
 <h2>🍟 Chips & Sides</h2>
 <div class="items-grid">
-<article><figure><img src="https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg"></figure><div class="info"><span class="name">Masala Chips</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fGNydW5jaHklMjBzbGltJTIwZnJpZXN8ZW58MHx8MHx8fDA%3D"></figure><div class="info"><span class="name">Crunchy Slim Fries</span><span class="price">KES 300</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1633959639799-6d3f66e05710?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG90YXRvJTIwd2VkZ2VzfGVufDB8fDB8fHww"></figure><div class="info"><span class="name">Potato Wedges</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1639744091981-2f826321fae6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2FybGljJTIwZnJpZXN8ZW58MHx8MHx8fDA%3D"></figure><div class="info"><span class="name">Garlic Fries</span><span class="price">KES 400</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/1481217071/photo/schezwan-potato-fries.jpg?s=612x612&w=0&k=20&c=TW3hiIy07i-KSCXMKEFgS--SIrKVZ5AAx-JnT00MvPo="></figure><div class="info"><span class="name">Masala Chips</span><span class="price">KES 400</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/1752526228/photo/french-fries.jpg?s=612x612&w=0&k=20&c=req6SyOWSMS3WHbc8vKbhDIdaVYpqR-9Zi4d5EenpBc="></figure><div class="info"><span class="name">Crunchy Slim Fries</span><span class="price">KES 300</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/1496851891/photo/potato-wedges-or-deluxe-potatoes-with-sauce.jpg?s=612x612&w=0&k=20&c=qozJmoB1CVq76WmplLu--3DaEFyxGczd1teXjiYRrYw="></figure><div class="info"><span class="name">Potato Wedges</span><span class="price">KES 400</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/1331118722/photo/french-fries-sauce.jpg?s=612x612&w=0&k=20&c=VwM6s-Tl8L6H50DXipk8r9lxS-VOjvdl4hiDGQ_OTi4="></figure><div class="info"><span class="name">Garlic Fries</span><span class="price">KES 400</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/1320022931/photo/directly-above-shot-of-food-in-plate-on-table-india.jpg?s=612x612&w=0&k=20&c=NFk2OVHKoDIBpS0wDyADveLeg5a0pPMdTQf3HJcYnwo="></figure><div class="info"><span class="name">Maru Bhajia</span><span class="price">KES 400</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/1060482216/photo/peri-peri-french-fries.jpg?s=612x612&w=0&k=20&c=FAUjXJ4zWapoWxZ3p1tgnLcdC4Ff80iY3fkrWv97Cy0="></figure><div class="info"><span class="name">Pepper Chips</span><span class="price">KES 400</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/1423625800/photo/crispy-baked-potatoes-in-a-cast-iron-pan-with-thyme-top-of-view.jpg?s=612x612&w=0&k=20&c=YGsqpfh1ARY0_TdLFeV3Rh49Pa-yEiO4qxDV9F5lKWU="></figure><div class="info"><span class="name">Roast Potatoes</span><span class="price">KES 400</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/2196627272/photo/mashed-potatoes-in-white-bowl-on-wooden-rustic-table.jpg?s=612x612&w=0&k=20&c=ixHzG2ONZBU9t7k2S_0Gm_BjpENjx2mZmoXtLuv0TwI="></figure><div class="info"><span class="name">Mashed Potatoes</span><span class="price">KES 300</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/2163282385/photo/fried-potatoes-with-onions-ond-ham-on-a-wooden-table.jpg?s=612x612&w=0&k=20&c=1c97kxtOrQZUf0HLAPknkhED5q2I_V7lj9b58wwfu9k="></figure><div class="info"><span class="name">Saute Potatoes</span><span class="price">KES 400</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/1160956355/photo/french-fries.jpg?s=612x612&w=0&k=20&c=gi2KVLSQvycOenhD9hpJFwQlagZEh8KIl9KwNEAG6XY="></figure><div class="info"><span class="name">Poussin Chips</span><span class="price">KES 400</span></div></article>
 </div>
 </section>
 
-<!-- BITINGS -->
+<!-- BITING -->
 <section>
-<h2>🍢 Bitings</h2>
+<h2><img src="https://cdn-icons-png.flaticon.com/512/1046/1046769.png" alt="Bitings Icon" width="26" height="26">
+   Bitings</h2>
 <div class="items-grid">
-<article><figure><img src="https://media.gettyimages.com/id/2248426390/photo/grilled-meat-chicken-kebabs-and-snacks.jpg?s=612x612&w=0&k=20&c=i8gmG09e1Qc3JUpvWZZ9i1neWboiaWDu4b2BIe9XfAU="></figure><div class="info"><span class="name">Chilli Beef Strips</span><span class="price">KES 500</span></div></article>
-<article><figure><img src="https://media.gettyimages.com/id/498895126/photo/regional-snack-northeastern-brazil.jpg?s=612x612&w=0&k=20&c=PUTUPG166b-rkfnIvf3pPX1ezwkkt8jxFxm__MFKjm8="></figure><div class="info"><span class="name">Teriyaki Choma Sausage</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="https://media.gettyimages.com/id/2208016039/photo/close-up-of-food-in-plate-on-table-kenya.jpg?s=612x612&w=0&k=20&c=lKjCoKIK8ubjAfcxiSscF2jttwti-CrtXOIsm1xNxKU="></figure><div class="info"><span class="name">Pork Ndani</span><span class="price">KES 650</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/2248426390/photo/grilled-meat-chicken-kebabs-and-snacks.jpg?s=612x612&w=0&k=20&c=i8gmG09e1Qc3JUpvWZZ9i1neWboiaWDu4b2BIe9XfAU="></figure><div class="info"><span class="name">Chilli Beef Strips</span><span class="price">KES 850</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/498895126/photo/regional-snack-northeastern-brazil.jpg?s=612x612&w=0&k=20&c=PUTUPG166b-rkfnIvf3pPX1ezwkkt8jxFxm__MFKjm8="></figure><div class="info"><span class="name">Teriyaki Choma Sausage</span><span class="price">KES 1100</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/2208016039/photo/close-up-of-food-in-plate-on-table-kenya.jpg?s=612x612&w=0&k=20&c=lKjCoKIK8ubjAfcxiSscF2jttwti-CrtXOIsm1xNxKU="></figure><div class="info"><span class="name">Pork Ndani</span><span class="price">KES 1000</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/1471961821/photo/three-piece-chicken-tender-meal.jpg?s=612x612&w=0&k=20&c=NSda5RtyV1gZB4QS9jz_JHiIjNb_RdIFxiAo7a2KgqQ="></figure><div class="info"><span class="name">Fish fingers</span><span class="price">KES 800</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/1149949399/photo/view-of-restaurant-meal.jpg?s=612x612&w=0&k=20&c=6rfTLBGxK7Lplw9E0VYAE1ejzjJmrcPaYpMW6VTo938="></figure><div class="info"><span class="name">Poussin Fish</span><span class="price">KES 1000</span></div></article>
+<article><figure><img src="https://media.gettyimages.com/id/2163177503/photo/chicken-nuggets-as-detailed-close-up-shot.jpg?s=612x612&w=0&k=20&c=NKJxv7hASvQ15A0eDGDT82DfkthkaqZ6tJE6SZLK1jk="></figure><div class="info"><span class="name">Chicken Nuggets</span><span class="price">KES 800</span></div></article>
 </div>
 </section>
 
@@ -253,21 +284,39 @@ figure img{width:100%;height:100%;object-fit:cover}
 <h2>🦞 Seafood</h2>
 <div class="items-grid">
 <article><figure><img src="https://images.unsplash.com/photo-1553621042-f6e147245754"></figure><div class="info"><span class="name">Grilled Tilapia</span><span class="price">KES 900</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1544025162-1e20a41c7c47"></figure><div class="info"><span class="name">Prawns</span><span class="price">KES 1200</span></div></article>
+<article><figure><img src="https://images.unsplash.com/photo-1544025162-93a8a8fcb16f"></figure><div class="info"><span class="name">Fried Fish</span><span class="price">KES 850</span></div></article>
 </div>
 </section>
 
-<!-- DRINKS & HOT BEVERAGES -->
+<!-- BITES -->
 <section>
-<h2>🥤 Drinks & Hot Beverages</h2>
+<h2>🥪 Bites</h2>
 <div class="items-grid">
-<article><figure><img src="https://images.unsplash.com/photo-1510626176961-4b45e80b4b1f"></figure><div class="info"><span class="name">Espresso</span><span class="price">KES 250</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348"></figure><div class="info"><span class="name">Cappuccino</span><span class="price">KES 300</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1528825871115-3581a5387919"></figure><div class="info"><span class="name">Fresh Juice</span><span class="price">KES 350</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1604908177432-9c79c7c57d44"></figure><div class="info"><span class="name">Soda</span><span class="price">KES 200</span></div></article>
+<article><figure><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"></figure><div class="info"><span class="name">Beef Burger</span><span class="price">KES 600</span></div></article>
+<article><figure><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950"></figure><div class="info"><span class="name">Samosas</span><span class="price">KES 300</span></div></article>
+<article><figure><img src="https://images.unsplash.com/photo-1606755962773-0c81d79f32c1"></figure><div class="info"><span class="name">Chicken Wings</span><span class="price">KES 600</span></div></article>
+</div>
+</section>
+
+<!-- DRINKS -->
+<section>
+<h2>🥤 Smoothies & Juices</h2>
+<div class="items-grid">
+<article><figure><img src="https://images.unsplash.com/photo-1577805947697-89e18249d767"></figure><div class="info"><span class="name">Mango Smoothie</span><span class="price">KES 350</span></div></article>
+<article><figure><img src="https://images.unsplash.com/photo-1577805947697-3b2a4d5c6e3d"></figure><div class="info"><span class="name">Passion Juice</span><span class="price">KES 300</span></div></article>
+</div>
+</section>
+
+<!-- HOT BEVERAGES -->
+<section>
+<h2>☕ Hot Beverages</h2>
+<div class="items-grid">
+<article><figure><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"></figure><div class="info"><span class="name">Coffee</span><span class="price">KES 250</span></div></article>
+<article><figure><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574"></figure><div class="info"><span class="name">Tea</span><span class="price">KES 200</span></div></article>
 </div>
 </section>
 
 </main>
 </body>
 </html>
+
