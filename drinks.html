@@ -33,6 +33,7 @@ body{
   position:relative;
 }
 
+/* EXISTING ICON PATTERN */
 body::before{
   content:"";
   position:fixed;
@@ -40,6 +41,19 @@ body::before{
   background:url("https://images.unsplash.com/photo-1659605679455-78683cd3da23?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGljb25zJTIwcmVwcmVzZW50aW5nJTIwZHJpbmtzfGVufDB8fDB8fHwy");
   background-size:260px;
   opacity:.07;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ✅ NEW TRANSPARENT OVERLAY */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("https://media.istockphoto.com/id/1240898877/vector/food-package-icon-set.webp?a=1&b=1&s=612x612&w=0&k=20&c=xMd3GdbMjcDdO8c55Jb20pxW_WztS-i4qgVMmLyfHaA=");
+  background-repeat:repeat;
+  background-size:220px;
+  opacity:0.035;
   pointer-events:none;
   z-index:0;
 }
