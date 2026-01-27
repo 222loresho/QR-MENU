@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Triple Two Loresho Menu</title>
+<title>Triple Two Loresho Drinks</title>
 
-<meta name="description" content="Triple Two Loresho official menu – 222 Loresho, Nairobi.">
+<meta name="description" content="Triple Two Loresho drinks menu – Premium beverages in Nairobi.">
 <meta name="theme-color" content="#7EC09F">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:wght@400;600&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -25,8 +25,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family:'Roboto Slab',serif;
-  background:linear-gradient(135deg,#000 0%,var(--bg-dark) 45%,var(--accent) 140%);
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#1a0033 0%,#2d004d 45%,#7EC09F 140%);
   color:var(--text-light);
   min-height:100vh;
   position:relative;
@@ -36,9 +36,10 @@ body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:url("https://media.gettyimages.com/id/1076130232/vector/food-and-drink-icons-set-3-light-line-series.jpg?s=612x612&w=0&k=20&c=Xw_culYzHFeHApCiYMGnQ9yOsLl0JGOk0kMOz6V5mu8=");
-  background-size:260px;
-  opacity:.07;
+  background:url("https://images.unsplash.com/photo-1444552183223-661b5f21cd4a");
+  background-size:cover;
+  background-position:center;
+  opacity:.15;
   pointer-events:none;
   z-index:0;
 }
@@ -56,11 +57,11 @@ header h1{
   font-family:'Lobster',cursive;
   font-size:clamp(2.3rem,5vw,3.3rem)
 }
-.location{font-family:'Playfair Display',serif;color:var(--text-muted)}
+.location{font-family:'Poppins',sans-serif;color:var(--text-muted)}
 
 section{margin-bottom:3rem}
 section h2{
-  font-family:'Playfair Display',serif;
+  font-family:'Poppins',sans-serif;
   font-size:1.6rem;
   margin-bottom:1.4rem;
   border-left:4px solid var(--accent);
@@ -108,7 +109,7 @@ figure img{width:100%;height:100%;object-fit:cover}
 }
 
 .h1-container h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 2.4rem;
   letter-spacing: 1px;
   margin-bottom: 8px;
@@ -195,6 +196,99 @@ figure img{width:100%;height:100%;object-fit:cover}
   color:#1e2f2a;
   transform:translateY(-2px);
 }
+
+/* DRINKS HERO SECTION */
+.hero-drinks {
+  position: relative;
+  height: 350px;
+  background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #45B7D1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.hero-drinks::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+.hero-drinks h2 {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* DRINK CATEGORIES */
+.drink-section {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--text-light);
+}
+
+.category-title span {
+  font-size: 2rem;
+}
+
+/* DRINKS GRID */
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.drink-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255,213,79,.2);
+  transition: 0.3s;
+  padding: 1.5rem;
+}
+
+.drink-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--hover-border);
+  box-shadow: 0 12px 28px rgba(255,107,107,.3);
+}
+
+.drink-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #FFD54F;
+}
+
+.drink-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.drink-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.drink-price {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 1rem;
+}
 </style>
 </head>
 
@@ -206,7 +300,7 @@ figure img{width:100%;height:100%;object-fit:cover}
 
   <!-- HEADER -->
   <div class="h1-container">
-    <h1>Welcome to Triple Two Loresho</h1>
+    <h1>Triple Two Loresho Drinks</h1>
   <p class="location">222 Loresho, Nairobi</p>
 
    <div class="header-icons">
@@ -217,71 +311,133 @@ figure img{width:100%;height:100%;object-fit:cover}
 </div>
 <!-- NAVIGATION BUTTONS -->
     <div class="nav-buttons">
-      <a href="index.html" class="active">🍽 Food</a>
-      <a href="drinks.html">🥂 Drinks</a>
+      <a href="index.html">🍽 Food</a>
+      <a href="drinks.html" class="active" aria-current="page">🥂 Drinks</a>
       <a href="accommodation.html">🏨 Accommodation</a>
+      <a href="info.html">ℹ️ Info</a>
     </div>
 
   </div>
 </header>
 
-
-<!-- CHIPS & SIDES -->
-<section>
-
-
-<!-- BITING -->
-<section>
-<h2><img src="https://cdn-icons-png.flaticon.com/512/1046/1046769.png" alt="Bitings Icon" width="26" height="26">
-   Bitings</h2>
-<div class="items-grid">
-<article><figure><img src="https://media.gettyimages.com/id/2248426390/photo/grilled-meat-chicken-kebabs-and-snacks.jpg?s=612x612&w=0&k=20&c=i8gmG09e1Qc3JUpvWZZ9i1neWboiaWDu4b2BIe9XfAU="></figure><div class="info"><span class="name">chilli beef Strips</span><span class="price">KES 850</span></div></article>
-<article><figure><img src="https://media.gettyimages.com/id/498895126/photo/regional-snack-northeastern-brazil.jpg?s=612x612&w=0&k=20&c=PUTUPG166b-rkfnIvf3pPX1ezwkkt8jxFxm__MFKjm8="></figure><div class="info"><span class="name">Teriyaki Choma Sausage</span><span class="price">KES 1100</span></div></article>
-<article><figure><img src="https://media.gettyimages.com/id/2208016039/photo/close-up-of-food-in-plate-on-table-kenya.jpg?s=612x612&w=0&k=20&c=lKjCoKIK8ubjAfcxiSscF2jttwti-CrtXOIsm1xNxKU="></figure><div class="info"><span class="name">Pork Ndani</span><span class="price">KES 1000</span></div></article>
-<article><figure><img src="https://media.gettyimages.com/id/1471961821/photo/three-piece-chicken-tender-meal.jpg?s=612x612&w=0&k=20&c=NSda5RtyV1gZB4QS9jz_JHiIjNb_RdIFxiAo7a2KgqQ="></figure><div class="info"><span class="name">Fish fingers</span><span class="price">KES 800</span></div></article>
-<article><figure><img src="https://media.gettyimages.com/id/1149949399/photo/view-of-restaurant-meal.jpg?s=612x612&w=0&k=20&c=6rfTLBGxK7Lplw9E0VYAE1ejzjJmrcPaYpMW6VTo938="></figure><div class="info"><span class="name">Poussin Fish</span><span class="price">KES 1000</span></div></article>
-<article><figure><img src="https://media.gettyimages.com/id/2163177503/photo/chicken-nuggets-as-detailed-close-up-shot.jpg?s=612x612&w=0&k=20&c=NKJxv7hASvQ15A0eDGDT82DfkthkaqZ6tJE6SZLK1jk="></figure><div class="info"><span class="name">Chicken Nuggets</span><span class="price">KES 800</span></div></article>
-</div>
+<!-- HERO SECTION -->
+<section class="hero-drinks">
+  <h2>🍹 Refresh Your Moments</h2>
 </section>
 
-<!-- 222 FLAMES -->
-<section>
-<h2>🔥 222 Flames</h2>
-<div class="items-grid">
-<article><figure><img src="https://images.unsplash.com/photo-1604908177431-3c79c7c57d33"></figure><div class="info"><span class="name">Grilled Goat</span><span class="price">KES 1200</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1585325701956-60dd9c8553bc"></figure><div class="info"><span class="name">Flame Chicken</span><span class="price">KES 900</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1544025162-1e20a41c7c47"></figure><div class="info"><span class="name">Grilled Pork</span><span class="price">KES 950</span></div></article>
-</div>
+<!-- SMOOTHIES & JUICES -->
+<section class="drink-section">
+  <div class="category-title">
+    <span>🥤</span>
+    <h2>Smoothies & Juices</h2>
+  </div>
+  <div class="drinks-grid">
+    <div class="drink-card">
+      <div class="drink-icon">🥭</div>
+      <h3>Mango Smoothie</h3>
+      <p>Creamy mango blend with yogurt and a splash of honey</p>
+      <div class="drink-price">KES 350</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">🍑</div>
+      <h3>Passion Juice</h3>
+      <p>Refreshing passion fruit juice with fresh lime</p>
+      <div class="drink-price">KES 300</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">🫐</div>
+      <h3>Berry Smoothie</h3>
+      <p>Mixed berries blended with banana and coconut milk</p>
+      <div class="drink-price">KES 380</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">🥕</div>
+      <h3>Carrot Orange Juice</h3>
+      <p>Fresh carrot and orange juice with a hint of ginger</p>
+      <div class="drink-price">KES 320</div>
+    </div>
+  </div>
 </section>
 
-<!-- SEAFOOD -->
-<section>
-<h2>🦞 Seafood srtyatsrtgfwva4b6</h2>
-<div class="items-grid">
-<article><figure><img src="https://images.unsplash.com/photo-1553621042-f6e147245754"></figure><div class="info"><span class="name">Grilled Tilapia</span><span class="price">KES 900</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1544025162-93a8a8fcb16f"></figure><div class="info"><span class="name">Fried Fish</span><span class="price">KES 850</span></div></article>
-</div>
+<!-- HOT BEVERAGES -->
+<section class="drink-section">
+  <div class="category-title">
+    <span>☕</span>
+    <h2>Hot Beverages</h2>
+  </div>
+  <div class="drinks-grid">
+    <div class="drink-card">
+      <div class="drink-icon">☕</div>
+      <h3>Espresso</h3>
+      <p>Rich, strong espresso shot - perfectly concentrated</p>
+      <div class="drink-price">KES 200</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">🥛</div>
+      <h3>Coffee with Milk</h3>
+      <p>Smooth espresso with steamed milk and light foam</p>
+      <div class="drink-price">KES 250</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">🫖</div>
+      <h3>Black Tea</h3>
+      <p>Premium black tea blend, steeped to perfection</p>
+      <div class="drink-price">KES 150</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">🌿</div>
+      <h3>Herbal Tea</h3>
+      <p>Soothing chamomile and herbal tea blend</p>
+      <div class="drink-price">KES 180</div>
+    </div>
+  </div>
 </section>
 
-<!-- BITES -->
-<section>
-<h2>🥪 Bites</h2>
-<div class="items-grid">
-<article><figure><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"></figure><div class="info"><span class="name">Beef Burger</span><span class="price">KES 600</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950"></figure><div class="info"><span class="name">Samosas</span><span class="price">KES 300</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1606755962773-0c81d79f32c1"></figure><div class="info"><span class="name">Chicken Wings</span><span class="price">KES 600</span></div></article>
-</div>
+<!-- COCKTAILS & SPIRITS -->
+<section class="drink-section">
+  <div class="category-title">
+    <span>🍹</span>
+    <h2>Cocktails & Spirits</h2>
+  </div>
+  <div class="drinks-grid">
+    <div class="drink-card">
+      <div class="drink-icon">🌿</div>
+      <h3>Mojito</h3>
+      <p>Fresh mint, lime, rum, and soda water with a touch of sugar</p>
+      <div class="drink-price">KES 650</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">🍓</div>
+      <h3>Strawberry Daiquiri</h3>
+      <p>Smooth strawberry blend with rum and lime juice</p>
+      <div class="drink-price">KES 700</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">🥥</div>
+      <h3>Piña Colada</h3>
+      <p>Creamy coconut cream, pineapple juice, and rum</p>
+      <div class="drink-price">KES 750</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">🍋</div>
+      <h3>Margarita</h3>
+      <p>Classic tequila, lime, and triple sec on the rocks</p>
+      <div class="drink-price">KES 800</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">🌊</div>
+      <h3>Long Island Iced Tea</h3>
+      <p>Complex blend of multiple spirits with a smooth finish</p>
+      <div class="drink-price">KES 900</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-icon">✨</div>
+      <h3>Aperol Spritz</h3>
+      <p>Light and bubbly with Aperol, Prosecco, and soda</p>
+      <div class="drink-price">KES 850</div>
+    </div>
+  </div>
 </section>
-
-<!-- DRINKS -->
-<section>
-<h2>🥤 Smoothies & Juices</h2>
-<div class="items-grid">
-<article><figure><img src="https://images.unsplash.com/photo-1577805947697-89e18249d767"></figure><div class="info"><span class="name">Mango Smoothie</span><span class="price">KES 350</span></div></article>
-<article><figure><img src="https://images.unsplash.com/photo-1577805947697-3b2a4d5c6e3d"></figure><div class="info"><span class="name">Passion Juice</span><span class="price">KES 300</span></div></article>
-</div>
-</section>
-tdfghfhgfhjgfhjgjhggit s
 
 
 </main>
