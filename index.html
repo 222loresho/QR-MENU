@@ -1,155 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Triple Two Loresho | Welcome</title>
-
-<meta name="description" content="Welcome to Triple Two Loresho. Experience refined dining in Loresho, Nairobi.">
-<meta name="theme-color" content="#7EC09F">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    position: relative;
-
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-                url('images/landback.jpg') center/cover no-repeat;
-}
-
-/* CONTENT CONTAINER */
-
-.container {
-    max-width: 600px;
-    padding: 20px;
-    animation: fadeUp 1.2s ease forwards;
-}
-
-h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-p {
-    font-weight: 300;
-    margin-bottom: 40px;
-    line-height: 1.6;
-}
-
-.btn {
-    display: inline-block;
-    background: #7EC09F;
-    color: #111;
-    padding: 14px 36px;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(126,192,159,0.4);
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===== DESKTOP SEMI-CIRCLE ===== */
-
-.logo-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 480px;
-    height: 240px; 
-    background: #000;
-    border-bottom-left-radius: 480px; /* must match width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo img {
-    width: 150px;
+  .logo {
+    background-image: url('logo.png');
+    background-size: contain;
+    aspect-ratio: 16 / 9;
+    width: 50vw;
     height: auto;
-    display: block;
-}
+  }
 
-/* ===== MOBILE OPTIMIZATION ===== */
-
-@media(max-width: 768px) {
-
-    body {
-        align-items: flex-start;
-        padding-top: 180px;
+  @media (max-width: 768px) {
+    .logo {
+      width: 80vw;
     }
+  }
 
-    .logo-wrapper {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        width: 80%;
-        height: 200px;
-        border-bottom-left-radius: 260px;
-        border-bottom-right-radius: 260px;
+  @media (max-width: 480px) {
+    .logo {
+      width: 90vw;
     }
-
-    .logo img {
-        width: 120px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-}
-
+  }
 </style>
-</head>
-
-<body>
-
-<div class="logo-wrapper">
-    <div class="logo">
-        <!-- 🔥 REPLACE WITH YOUR LOGO FILE -->
-        <img src="images/logo.jpeg" alt="Triple Two Loresho Logo">
-    </div>
-</div>
-
-<div class="container">
-    <h1>Welcome to Triple Two Loresho</h1>
-    <p class="location">222 Loresho, Nairobi</p>
-    <p>
-        Experience refined dining and elegant atmosphere in the heart of Loresho.
-        Tap below to explore our menu.
-    </p>
-    <a href="menu.html" class="btn">View Menu</a>
-</div>
-
-</body>
-</html>
+<div class="logo"></div>
