@@ -90,34 +90,38 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    width: 480px;
-    height: 480px;
+    width: 500px;
+    height: 500px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Larger Black Circle */
+/* Large Black Circle */
 .logo-wrapper::before {
     content: "";
     position: absolute;
-    width: 700px;
-    height: 700px;
+    width: 750px;
+    height: 750px;
     background: #000;
     border-radius: 50%;
-    top: -350px;
-    right: -350px;
+    top: -375px;
+    right: -375px;
+    z-index: 0;
 }
 
-/* Center Logo Inside Circle */
+/* Logo centered perfectly */
 
 .logo {
-    position: absolute;
-    top: 120px;
-    right: 140px;
+    position: relative;
+    z-index: 1;
 }
 
 .logo img {
-    width: 140px;
+    width: 150px;
     height: auto;
+    display: block;
 }
 
 </style>
