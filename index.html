@@ -20,12 +20,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
+    position: relative;
 
     background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
                 url('images/landback.jpg') center/cover no-repeat;
@@ -78,40 +79,54 @@ p {
     }
 }
 
-@media(max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-}
-
-/* ===== PERFECT SEMI-CIRCLE LOGO BACKGROUND ===== */
+/* ===== DESKTOP SEMI-CIRCLE ===== */
 
 .logo-wrapper {
     position: absolute;
     top: 0;
     right: 0;
     width: 480px;
-    height: 240px; /* Half of width = perfect semi-circle */
+    height: 240px; 
     background: #000;
-    border-bottom-left-radius: 320px;
+    border-bottom-left-radius: 480px; /* must match width */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
-}
-
-/* Logo perfectly centered inside semi-circle */
-
-.logo img {
-    width: 130px;
-    height: auto;
-    display: block;
 }
 
 .logo img {
     width: 150px;
     height: auto;
     display: block;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+
+@media(max-width: 768px) {
+
+    body {
+        align-items: flex-start;
+        padding-top: 180px;
+    }
+
+    .logo-wrapper {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 260px;
+        height: 130px;
+        border-bottom-left-radius: 260px;
+        border-bottom-right-radius: 260px;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
 }
 
 </style>
