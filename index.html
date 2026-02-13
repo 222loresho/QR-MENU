@@ -90,35 +90,22 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    width: 400px;
-    height: 400px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Perfectly centered large circle */
-.logo-wrapper::before {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
+    width: 320px;
+    height: 160px; /* Half of width = perfect semi-circle */
     background: #000;
-    border-radius: 50%;
-    
-    /* Center of circle aligned to wrapper center */
-    top: -100px;   /* 200 - 300 */
-    right: -100px; /* 200 - 300 */
-}
-
-/* Logo centered exactly in circle */
-.logo {
-    position: relative;
-    z-index: 1;
+    border-bottom-left-radius: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
+}
+
+/* Logo perfectly centered inside semi-circle */
+
+.logo img {
+    width: 130px;
+    height: auto;
+    display: block;
 }
 
 .logo img {
