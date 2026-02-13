@@ -26,13 +26,52 @@ body {
     align-items: center;
     text-align: center;
     color: white;
+    overflow: hidden;
 
-    /* Correct relative path */
     background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
                 url('images/landback.jpg') center/cover no-repeat;
 }
 
-/* CONTENT CONTAINER */
+/* ===== LOGO BACKGROUND ===== */
+
+.logo-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Perfect Quarter Circle */
+.logo-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: #000;
+    border-radius: 50%;
+    top: -300px;
+    right: -300px;
+}
+
+/* Center Logo Inside Visible Circle Area */
+
+.logo {
+    position: relative;
+    z-index: 1;
+}
+
+.logo img {
+    width: 140px;
+    height: auto;
+    display: block;
+}
+
+/* ===== MAIN CONTENT ===== */
 
 .container {
     max-width: 600px;
@@ -44,6 +83,12 @@ h1 {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 20px;
+}
+
+.location {
+    font-weight: 400;
+    margin-bottom: 10px;
+    opacity: 0.85;
 }
 
 p {
@@ -80,56 +125,34 @@ p {
 }
 
 @media(max-width: 768px) {
+
+    .logo-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+
+    .logo-wrapper::before {
+        width: 400px;
+        height: 400px;
+        top: -200px;
+        right: -200px;
+    }
+
+    .logo img {
+        width: 95px;
+    }
+
     h1 {
         font-size: 2rem;
     }
-}
-/* ===== LOGO BACKGROUND ===== */
-
-.logo-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 500px;
-    height: 500px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Large Black Circle */
-.logo-wrapper::before {
-    content: "";
-    position: absolute;
-    width: 750px;
-    height: 750px;
-    background: #000;
-    border-radius: 50%;
-    top: -375px;
-    right: -375px;
-    z-index: 0;
-}
-
-/* Logo centered perfectly */
-
-.logo {
-    position: relative;
-    z-index: 1;
-}
-
-.logo img {
-    width: 150px;
-    height: auto;
-    display: block;
 }
 
 </style>
 </head>
 <body>
- <div class="logo-wrapper">
+
+<div class="logo-wrapper">
     <div class="logo">
-        <!-- 🔥 REPLACE WITH YOUR LOGO FILE -->
         <img src="images/logo.jpeg" alt="Triple Two Loresho Logo">
     </div>
 </div>
