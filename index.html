@@ -171,13 +171,12 @@ p {
 
 /* ===== LANDSCAPE ORIENTATION FIX ===== */
 
-@media(orientation: landscape) and (max-width: 1024px) {
+@media(orientation: landscape) and (max-width: 768px) {
 
     body {
         align-items: flex-start;
         padding-top: 0;
         overflow-y: auto;
-        min-height: auto;
     }
 
     .logo-wrapper {
@@ -186,13 +185,12 @@ p {
         left: auto;
         right: 0;
         transform: none;
-        width: 50%;
+        width: 60%;
         max-width: 480px;
         aspect-ratio: 2;
         border-radius: 0;
         border-bottom-left-radius: 100%;
         border-bottom-right-radius: 0;
-        z-index: 5;
     }
 
     .logo img {
@@ -201,25 +199,23 @@ p {
     }
 
     .container {
-        margin-top: 200px;
-        margin-left: 0;
+        margin-top: 120px;
+        margin-right: auto;
         max-width: 100%;
-        padding: 20px;
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-bottom: 10px;
     }
 
     p {
         margin-bottom: 15px;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
 
-    .btn {
-        padding: 10px 30px;
-        font-size: 0.9rem;
+    .container {
+        padding: 10px;
     }
 
 }
