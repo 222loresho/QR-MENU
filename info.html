@@ -3,333 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Triple Two Loresho Info</title>
+<title>Triple Two Loresho | Welcome</title>
 
-<meta name="description" content="Triple Two Loresho restaurant information – 222 Loresho, Nairobi.">
+<meta name="description" content="Welcome to Triple Two Loresho. Experience refined dining in Loresho, Nairobi.">
 <meta name="theme-color" content="#7EC09F">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg-dark:#0f1f1b;
-  --card-bg:rgba(255,255,255,.08);
-  --accent:#7EC09F;
-  --hover-border:#FFD54F;
-  --text-light:#f4f7f6;
-  --text-muted:#cbd5d1;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
 
-body{
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#000 0%,var(--bg-dark) 45%,var(--accent) 140%);
-  color:var(--text-light);
-  min-height:100vh;
-  position:relative;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                url('images/landback.jpg') center/cover no-repeat;
 }
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
-  background-size:cover;
-  opacity:.07;
-  pointer-events:none;
-  z-index:0;
+/* LOGO TOP RIGHT */
+
+.logo {
+    position: absolute;
+    top: 25px;
+    right: 30px;
 }
 
-main{
-  max-width:1200px;
-  margin:auto;
-  padding:1.5rem;
-  position:relative;
-  z-index:1;
+.logo img {
+    width: 120px;
+    height: auto;
+    transition: all 0.3s ease;
+    opacity: 0.9;
 }
 
-header{text-align:center;margin-bottom:3rem}
-header h1{
-  font-family:'Lobster',cursive;
-  font-size:clamp(2.3rem,5vw,3.3rem)
-}
-.location{font-family:'Poppins',sans-serif;color:var(--text-muted)}
-
-section{margin-bottom:3rem}
-section h2{
-  font-family:'Poppins',sans-serif;
-  font-size:1.6rem;
-  margin-bottom:1.4rem;
-  border-left:4px solid var(--accent);
-  padding-left:.8rem;
+.logo img:hover {
+    transform: scale(1.05);
+    opacity: 1;
 }
 
-.items-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:1.2rem;
+/* CONTENT */
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+    animation: fadeUp 1.2s ease forwards;
 }
 
-article{
-  background:var(--card-bg);
-  border-radius:16px;
-  overflow:hidden;
-  backdrop-filter:blur(6px);
-  cursor:pointer;
-  border:2px solid transparent;
-  transition:.2s;
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-article:hover{
-  transform:translateY(-4px);
-  border-color:var(--hover-border);
-  box-shadow:0 0 0 1px rgba(255,213,79,.3),0 12px 28px rgba(0,0,0,.35);
+p {
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.6;
 }
 
-figure{height:150px;overflow:hidden}
-figure img{width:100%;height:100%;object-fit:cover}
-
-.info{
-  padding:.8rem 1rem 1rem;
-  display:flex;
-  justify-content:space-between;
-}
-.h1-container {
-  width: 100%;
-  background: linear-gradient(135deg,#7ec09f,#1e2f2a);
-  padding: 50px 25px 40px;
-  text-align: center;
-  box-shadow: 0 25px 60px rgba(0,0,0,.6);
-  margin-bottom: 70px;
-  border-radius: 0 0 45px 45px;
+.btn {
+    display: inline-block;
+    background: #7EC09F;
+    color: #111;
+    padding: 14px 36px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.h1-container h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.4rem;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(126,192,159,0.4);
 }
 
-.location {
-  font-size: .95rem;
-  opacity: .85;
-  margin-bottom: 25px;
+/* ANIMATION */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* ICON ROW */
-.header-icons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
+/* MOBILE */
+
+@media(max-width: 768px) {
+
+    .logo img {
+        width: 90px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
 }
 
-.header-icons a {
-  width: 46px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255,255,255,.15);
-  color: #fff;
-  font-size: 1.3rem;
-  text-decoration: none;
-  transition: all .35s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,.35);
-}
-
-.header-icons a:hover {
-  background: #ffd27d;
-  color: #1e2f2a;
-  transform: translateY(-4px) scale(1.1);
-  box-shadow: 0 15px 35px rgba(255,210,125,.55);
-}
-
-/* MOBILE TUNING */
-@media (max-width: 768px) {
-  .h1-container h1 {
-    font-size: 2rem;
-  }
-
-  .header-icons {
-    gap: 14px;
-  }
-
-  .header-icons a {
-    width: 42px;
-    height: 42px;
-    font-size: 1.15rem;
-  }
-}
-
-
-.name{font-size:.95rem}
-.price{font-size:.85rem;color:var(--accent)}
-/* NAV */
-.nav-buttons{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-  margin-top:18px; /* FIX */
-}
-
-.nav-buttons a{
-  padding:10px 22px;
-  border-radius:25px;
-  background:rgba(255,255,255,.15);
-  border:1.5px solid rgba(255,255,255,.2);
-  color:#fff;
-  text-decoration:none;
-  font-size:.95rem;
-  transition:.3s;
-}
-
-/* visible active state for current page */
-.nav-buttons a.active,
-.nav-buttons a[aria-current="page"]{
-  background:var(--hover-border);
-  color:#1e2f2a;
-  transform:none;
-}
-
-.nav-buttons a:hover{
-  background:var(--hover-border);
-  color:#1e2f2a;
-  transform:translateY(-2px);
-}
-
-/* Info card styles */
-.info-card {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 1.5rem;
-  backdrop-filter: blur(6px);
-  border: 2px solid transparent;
-  transition: .2s;
-  margin-bottom: 1rem;
-}
-
-.info-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--hover-border);
-  box-shadow: 0 0 0 1px rgba(255,213,79,.3), 0 12px 28px rgba(0,0,0,.35);
-}
-
-.info-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.info-card li {
-  margin-bottom: 0.5rem;
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.social-links a {
-  padding: 0.5rem 1rem;
-  background: rgba(255,255,255,.1);
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--text-light);
-  transition: .2s;
-}
-
-.social-links a:hover {
-  background: var(--hover-border);
-  color: #1e2f2a;
-  transform: translateY(-2px);
-}
 </style>
 </head>
-
 <body>
-<main>
 
-<header>
-  
-
-  <!-- HEADER -->
-  <div class="h1-container">
-    <h1>Info about Triple Two Loresho</h1>
-  <p class="location">222 Loresho, Nairobi</p>
-
-   <div class="header-icons">
-  <a href="https://wa.me/2547XXXXXXXX" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
-  <a href="https://instagram.com/yourpage" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
-  <a href="tel:+2547XXXXXXXX" aria-label="Call">📞</a>
-  <a href="info.html" aria-label="Info">ℹ️</a>
+<!-- LOGO AREA -->
+<div class="logo">
+    
+    <img src="images/logo.jpeg" alt="Triple Two Loresho Logo">
 </div>
 
-<!-- NAVIGATION BUTTONS -->
-    <nav aria-label="Main">
-      <div class="nav-buttons">
-        <a href="index.html">🍽 Food</a>
-        <a href="drinks.html">🥂 Drinks</a>
-        <a href="accommodation.html">🏨 Accommodation</a>
-        
-      </div>
-    </nav>
-
-
-  </div>
-</header>
-
-<!-- ABOUT US -->
-<section>
-<h2>🏢 About Us</h2>
-<div class="info-card">
-  <p>Welcome to Triple Two Loresho, your premier dining destination in Nairobi. We pride ourselves on serving authentic flavors with a modern twist, creating memorable experiences for every guest. Our commitment to quality ingredients and exceptional service makes us the go-to spot for locals and visitors alike.</p>
+<div class="container">
+    <h1>Welcome to Triple Two Loresho</h1>
+    <p>
+        Experience refined dining and elegant atmosphere in the heart of Loresho.
+        Tap below to explore our menu.
+    </p>
+    <a href="menu.html" class="btn">View Menu</a>
 </div>
-</section>
 
-<!-- OPENING HOURS -->
-<section>
-<h2>🕒 Opening Hours</h2>
-<div class="info-card">
-  <ul>
-    <li><strong>Monday - Friday:</strong> 11:00 AM - 11:00 PM</li>
-    <li><strong>Saturday:</strong> 12:00 PM - 12:00 AM</li>
-    <li><strong>Sunday:</strong> 12:00 PM - 10:00 PM</li>
-  </ul>
-  <p><em>Holidays may have special hours. Please call ahead.</em></p>
-</div>
-</section>
-
-<!-- CONTACT US -->
-<section>
-<h2>📞 Contact Us</h2>
-<div class="info-card">
-  <p><strong>Phone:</strong> +254 7XX XXX XXX</p>
-  <p><strong>Email:</strong> info@tripletwoloresho.com</p>
-  <p><strong>Instagram:</strong> <a href="https://instagram.com/tripletwoloresho" target="_blank" rel="noopener noreferrer">@tripletwoloresho</a></p>
-  <p><strong>Reservations:</strong> +254 7XX XXX XXX</p>
-  <p>For inquiries, feedback, or special requests, don't hesitate to reach out!</p>
-</div>
-</section>
-
-<!-- LOCATION -->
-<section>
-<h2>📍 Location</h2>
-<div class="info-card">
-  <p><strong>Address:</strong> 222 Loresho, Nairobi, Kenya</p>
-  <p>Located in the heart of Loresho, easily accessible by car or public transport. Ample parking available.</p>
-  <p><a href="https://maps.google.com/?q=222+Loresho+Nairobi" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
-</div>
-</section>
-
-</main>
 </body>
 </html>
-
