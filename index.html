@@ -38,6 +38,8 @@ body {
     max-width: 600px;
     padding: 20px;
     animation: fadeUp 1.2s ease forwards;
+    z-index: 10;
+    position: relative;
 }
 
 h1 {
@@ -94,6 +96,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
 }
 
 .logo img {
@@ -103,16 +106,18 @@ p {
     max-width: 20vw;
 }
 
-/* ===== MOBILE OPTIMIZATION ===== */
+/* ===== MOBILE OPTIMIZATION (PORTRAIT) ===== */
 
 @media(max-width: 768px) {
 
     body {
         align-items: flex-start;
-        padding-top: 15vw;
+        padding-top: 0;
     }
 
     .logo-wrapper {
+        position: fixed;
+        top: 0;
         left: 50%;
         right: auto;
         transform: translateX(-50%);
@@ -120,11 +125,16 @@ p {
         max-width: 400px;
         aspect-ratio: 1;
         border-radius: 50%;
+        z-index: 1;
     }
 
     .logo img {
         width: 15vw;
         max-width: 100px;
+    }
+
+    .container {
+        margin-top: 55vw;
     }
 
     h1 {
@@ -135,10 +145,6 @@ p {
 
 @media(max-width: 480px) {
 
-    body {
-        padding-top: 20vw;
-    }
-
     .logo-wrapper {
         width: 85vw;
         aspect-ratio: 1;
@@ -147,6 +153,10 @@ p {
     .logo img {
         width: 18vw;
         max-width: 80px;
+    }
+
+    .container {
+        margin-top: 50vw;
     }
 
     h1 {
@@ -161,26 +171,37 @@ p {
 
 /* ===== LANDSCAPE ORIENTATION FIX ===== */
 
-@media(max-height: 600px) and (orientation: landscape) {
+@media(orientation: landscape) and (max-width: 768px) {
 
     body {
-        padding-top: 120px !important;
         align-items: flex-start;
+        padding-top: 0;
         overflow-y: auto;
     }
 
     .logo-wrapper {
         position: fixed;
-        width: 100%;
-        max-width: 100%;
-        aspect-ratio: auto;
-        height: 100px;
+        top: 0;
+        left: auto;
+        right: 0;
+        transform: none;
+        width: 60%;
+        max-width: 480px;
+        aspect-ratio: 2;
         border-radius: 0;
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 0;
     }
 
     .logo img {
         width: 80px;
         max-width: 80px;
+    }
+
+    .container {
+        margin-top: 120px;
+        margin-right: auto;
+        max-width: 100%;
     }
 
     h1 {
@@ -189,7 +210,7 @@ p {
     }
 
     p {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         font-size: 0.85rem;
     }
 
