@@ -86,39 +86,39 @@ p {
 }
 /* ===== LOGO BACKGROUND SHAPE ===== */
 
+/* ===== LOGO BACKGROUND ===== */
+
 .logo-wrapper {
     position: absolute;
     top: 0;
     right: 0;
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
     overflow: hidden;
 }
 
-/* Black Semi-Circle */
+/* Large Black Circle */
 .logo-wrapper::before {
     content: "";
     position: absolute;
-    width: 320px;
-    height: 320px;
-    background: #000;   /* Black */
+    width: 380px;
+    height: 380px;
+    background: #000;
     border-radius: 50%;
-    top: -160px;
-    right: -160px;
-    z-index: 0;
+    top: -190px;
+    right: -190px;
 }
 
-/* Logo */
+/* Logo Position */
 
 .logo {
     position: absolute;
-    top: 35px;
-    right: 40px;
-    z-index: 1;
+    top: 60px;
+    right: 70px;
 }
 
 .logo img {
-    width: 110px;
+    width: 120px;
     height: auto;
     transition: 0.3s ease;
 }
@@ -126,6 +126,7 @@ p {
 .logo img:hover {
     transform: scale(1.05);
 }
+
 </style>
 </head>
 <body>
