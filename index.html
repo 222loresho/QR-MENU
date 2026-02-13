@@ -18,6 +18,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #111;
@@ -25,23 +29,43 @@ body {
     overflow-x: hidden;
 }
 
-/* HERO SECTION */
+/* HERO SECTION WITH VIDEO */
 
 .hero {
+    position: relative;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-                url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5') center/cover no-repeat;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
-    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    z-index: -1;
+}
+
+.hero-content {
+    animation: fadeUp 1.5s ease forwards;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     font-weight: 600;
     margin-bottom: 15px;
 }
@@ -56,41 +80,52 @@ body {
     background: #7EC09F;
     color: #111;
     padding: 14px 32px;
-    border-radius: 30px;
+    border-radius: 40px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(126,192,159,0.4);
+    transform: scale(1.07);
+    box-shadow: 0 10px 30px rgba(126,192,159,0.5);
 }
 
-/* INFO SECTION */
+/* PHONE MOCKUP SECTION */
 
-.info {
-    background: #181818;
-    padding: 60px 20px;
+.preview {
+    padding: 80px 20px;
     text-align: center;
 }
 
-.info-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
+.preview h2 {
+    color: #7EC09F;
+    margin-bottom: 40px;
 }
 
-.info-item h3 {
-    margin-bottom: 10px;
-    color: #7EC09F;
+.phone {
+    width: 260px;
+    margin: auto;
+    border-radius: 40px;
+    padding: 15px;
+    background: #222;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    transition: transform 0.4s ease;
+}
+
+.phone:hover {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+.phone img {
+    width: 100%;
+    border-radius: 30px;
 }
 
 /* ABOUT SECTION */
 
 .about {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
     max-width: 800px;
     margin: auto;
@@ -101,12 +136,12 @@ body {
     color: #7EC09F;
 }
 
-/* FOOTER CTA */
+/* CTA */
 
 .cta {
-    background: #7EC09F;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
+    background: #7EC09F;
 }
 
 .cta a {
@@ -123,16 +158,16 @@ body {
     background: #222;
 }
 
-/* ANIMATION */
+/* ANIMATIONS */
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(40px);}
     to {opacity: 1; transform: translateY(0);}
 }
 
-/* MOBILE OPTIMIZATION */
+/* MOBILE */
 
-@media (max-width: 768px) {
+@media(max-width:768px){
     .hero h1 {
         font-size: 2rem;
     }
@@ -143,32 +178,33 @@ body {
 <body>
 
 <section class="hero">
-    <h1>Welcome to Triple Two Loresho</h1>
-    <p>Experience refined dining, elegant atmosphere and unforgettable taste in the heart of Loresho.</p>
-    <a href="menu.html" class="btn">View Our Menu</a>
+    <!-- Royalty-Free Video (Pexels) -->
+    <video autoplay muted loop playsinline>
+        <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=8e2dfb01e9e3c7c85f2c5b7a3c4b8b6c6e5e3a7f&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1>Welcome to Triple Two Loresho</h1>
+        <p>Where elegance meets exceptional taste. Discover a refined dining experience crafted for atmosphere, comfort and unforgettable moments.</p>
+        <a href="#preview" class="btn">View Experience</a>
+    </div>
 </section>
 
-<section class="info">
-    <div class="info-grid">
-        <div class="info-item">
-            <h3>📍 Location</h3>
-            <p>Loresho, Nairobi</p>
-        </div>
-        <div class="info-item">
-            <h3>🕒 Hours</h3>
-            <p>Open Daily 10AM – Late</p>
-        </div>
-        <div class="info-item">
-            <h3>📶 Free WiFi</h3>
-            <p>Available for Guests</p>
-        </div>
+<section id="preview" class="preview">
+    <h2>Our Digital Menu Experience</h2>
+
+    <div class="phone">
+        <!-- Replace with your actual menu screenshot -->
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Menu Preview">
     </div>
 </section>
 
 <section class="about">
-    <h2>About Us</h2>
+    <h2>About Triple Two</h2>
     <p>
-        Triple Two Loresho blends modern elegance with exceptional cuisine, offering a warm and stylish dining experience crafted for comfort, taste and atmosphere.
+        Located in Loresho, Nairobi, Triple Two blends modern luxury with warm hospitality.
+        Every detail — from ambience to cuisine — is designed to create a memorable dining journey.
     </p>
 </section>
 
