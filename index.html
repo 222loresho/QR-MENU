@@ -32,25 +32,61 @@ body {
                 url('images/landback.jpg') center/cover no-repeat;
 }
 
-/* CONTENT CONTAINER */
+/* ===== MODERN FLOATING LOGO ===== */
+
+.logo-wrapper {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6),
+                0 0 40px rgba(126,192,159,0.4);
+
+    animation: floatLogo 4s ease-in-out infinite;
+    z-index: 5;
+}
+
+.logo img {
+    width: 85px;
+    height: auto;
+}
+
+/* ===== CONTENT ===== */
 
 .container {
     max-width: 600px;
     padding: 20px;
+    margin-top: 220px;
     animation: fadeUp 1.2s ease forwards;
-    z-index: 10;
-    position: relative;
 }
 
 h1 {
     font-size: 2.5rem;
     font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.location {
+    font-weight: 400;
+    opacity: 0.8;
     margin-bottom: 20px;
 }
 
 p {
     font-weight: 300;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     line-height: 1.6;
 }
 
@@ -67,8 +103,10 @@ p {
 
 .btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(126,192,159,0.4);
+    box-shadow: 0 10px 30px rgba(126,192,159,0.5);
 }
+
+/* ===== ANIMATIONS ===== */
 
 @keyframes fadeUp {
     from {
@@ -80,85 +118,63 @@ p {
         transform: translateY(0);
     }
 }
-Desktop (.logo-wrapper)
-.logo-wrapper {
- position: absolute;
- top: 0;
- right: 0;
- width: 100%;
- max-width: 360px; / was 480px — smaller semi-circle /
- aspect-ratio: 2;
- background: #000;
- border-bottom-left-radius: 100%;
- border-bottom-right-radius: 0;
- display: flex;
- justify-content: center;
- align-items: center;
- z-index: 5;
+
+@keyframes floatLogo {
+    0% { transform: translate(-50%, 0px); }
+    50% { transform: translate(-50%, -10px); }
+    100% { transform: translate(-50%, 0px); }
 }
-Mobile (portrait) @media(max-width: 768px)
-@media(max-width: 768px) {  body {
- align-items: flex-start;
- padding-top: 0;
- }  .logo-wrapper {
- position: fixed;
- top: 0;
- left: 50%;
- right: auto;
- transform: translateX(-50%);
- width: 70vw; / was 90vw /
- max-width: 300px; / was 400px /
- aspect-ratio: 1;
- border-radius: 50%;
- z-index: 1;
- }  .logo img {
- width: 15vw;
- max-width: 100px;
- }  .container {
- margin-top: 45vw; / was 55vw /
- }  h1 {
- font-size: 2rem;
- }
-Small phones @media(max-width: 480px)
-@media(max-width: 480px) {  .logo-wrapper {
- width: 70vw; / was 85vw /
- aspect-ratio: 1;
- }  .logo img {
- width: 18vw;
- max-width: 80px;
- }  .container {
- margin-top: 42vw; / was 50vw /
- }  h1 {
- font-size: 1.5rem;
- }  p {
- font-size: 0.9rem;
- }
+
+/* ===== MOBILE OPTIMIZATION ===== */
+
+@media(max-width: 768px) {
+
+    .logo-wrapper {
+        width: 120px;
+        height: 120px;
+        top: 30px;
+    }
 
     .logo img {
-        width: 80px;
-        max-width: 80px;
+        width: 70px;
     }
 
     .container {
-        margin-top: 120px;
-        margin-right: auto;
-        max-width: 100%;
+        margin-top: 180px;
+        padding: 15px;
     }
 
     h1 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
+        font-size: 2rem;
     }
 
     p {
-        margin-bottom: 15px;
-        font-size: 0.85rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media(max-width: 480px) {
+
+    .logo-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .logo img {
+        width: 60px;
     }
 
     .container {
-        padding: 10px;
+        margin-top: 150px;
     }
 
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
 }
 
 </style>
@@ -168,7 +184,6 @@ Small phones @media(max-width: 480px)
 
 <div class="logo-wrapper">
     <div class="logo">
-        <!-- 🔥 REPLACE WITH YOUR LOGO FILE -->
         <img src="images/logo.jpeg" alt="Triple Two Loresho Logo">
     </div>
 </div>
