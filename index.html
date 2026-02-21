@@ -6,7 +6,7 @@
 <title>Triple Two Loresho | Welcome</title>
 
 <meta name="description" content="Welcome to Triple Two Loresho. Experience refined dining in Loresho, Nairobi.">
-<meta name="theme-color" content="#7EC09F">
+<meta name="theme-color" content="#000000">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -32,7 +32,7 @@ body {
                 url('images/landback.jpg') center/cover no-repeat;
 }
 
-/* ===== MODERN FLOATING LOGO ===== */
+/* ===== MODERN FLOATING BLACK GLASS LOGO ===== */
 
 .logo-wrapper {
     position: absolute;
@@ -43,16 +43,18 @@ body {
     height: 150px;
     border-radius: 50%;
     
-    background: rgba(255,255,255,0.08);
+    background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.1);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6),
-                0 0 40px rgba(126,192,159,0.4);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.8),
+                0 0 30px rgba(0,0,0,0.6);
 
     animation: floatLogo 4s ease-in-out infinite;
     z-index: 5;
