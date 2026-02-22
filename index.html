@@ -13,7 +13,7 @@
 <link rel="preload" as="image" href="images/landback.jpg">
 <link rel="icon" href="images/logo.jpeg">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -38,138 +38,94 @@ align-items:center;
 text-align:center;
 color:white;
 
-overflow:hidden;
-position:relative;
-
 background:
-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
 url('images/landback.jpg');
 
 background-size:110%;
 background-position:center;
 
-animation:cinematicZoom 40s ease-in-out infinite alternate;
+animation:backgroundMove 40s ease-in-out infinite alternate;
+
 }
 
-/* ===== CINEMATIC VIGNETTE ===== */
+/* subtle vignette */
 
 body::after{
 
 content:"";
-
 position:absolute;
-
 inset:0;
 
 background:radial-gradient(circle at center,
-transparent 40%,
-rgba(0,0,0,0.5) 100%);
+transparent 45%,
+rgba(0,0,0,0.55) 100%);
 
 pointer-events:none;
 
 }
 
-/* ===== FLOATING LOGO ===== */
+/* ===== FLOATING GLASS LOGO ===== */
 
 .logo-wrapper{
 
 position:absolute;
+
 top:40px;
 left:50%;
 
 transform:translateX(-50%);
 
-width:160px;
-height:160px;
+width:150px;
+height:150px;
 
 border-radius:50%;
 
 background:rgba(0,0,0,0.75);
-backdrop-filter:blur(14px);
+backdrop-filter:blur(12px);
 
-border:1px solid rgba(212,175,55,0.35);
+border:1px solid rgba(255,255,255,0.1);
 
 display:flex;
 justify-content:center;
 align-items:center;
 
 box-shadow:
-0 20px 60px rgba(0,0,0,0.9),
-0 0 40px rgba(212,175,55,0.2);
+0 15px 50px rgba(0,0,0,0.8),
+0 0 30px rgba(0,0,0,0.6);
 
-animation:
-logoEntrance 1.2s ease,
-floatLogo 6s ease-in-out infinite,
-logoGlow 6s ease-in-out infinite;
+animation:floatLogo 4s ease-in-out infinite;
 
 z-index:5;
 
 }
 
 .logo img{
-width:90px;
+
+width:85px;
+height:auto;
+
 }
 
-/* ===== CARD ===== */
+/* ===== CONTENT ===== */
 
 .container{
 
-max-width:640px;
+max-width:600px;
 
-padding:50px;
+padding:40px;
 
-background:rgba(0,0,0,0.45);
+margin-top:220px;
 
-backdrop-filter:blur(12px);
+background:rgba(0,0,0,0.35);
 
-border-radius:24px;
+backdrop-filter:blur(8px);
 
-border:1px solid rgba(212,175,55,0.25);
+border-radius:18px;
 
-box-shadow:
-0 25px 80px rgba(0,0,0,0.95),
-0 0 120px rgba(212,175,55,0.15);
+border:1px solid rgba(255,255,255,0.08);
 
-margin-top:240px;
-
-position:relative;
-
-transition:transform .4s ease;
-
-animation:fadeUp 1.4s ease forwards;
-
-}
-
-/* subtle hover elevation */
-
-.container:hover{
-transform:translateY(-6px);
-}
-
-/* glass reflection sweep */
-
-.container::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-left:-150%;
-
-width:60%;
-height:100%;
-
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.12),
-transparent
-);
-
-transform:skewX(-20deg);
-
-animation:glassSweep 8s infinite;
+box-shadow:0 20px 60px rgba(0,0,0,0.8);
 
 }
 
@@ -177,84 +133,54 @@ animation:glassSweep 8s infinite;
 
 h1{
 
-font-size:2.7rem;
+font-size:2.6rem;
 
 font-weight:600;
 
-margin-bottom:14px;
+margin-bottom:15px;
 
-letter-spacing:1px;
-
-background:linear-gradient(90deg,#ffffff,#d4d4d4,#ffffff);
-
-background-size:200%;
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-animation:shimmer 6s linear infinite;
+letter-spacing:.5px;
 
 }
 
-/* ===== DIVIDER ===== */
+/* divider */
 
 .divider{
 
-width:90px;
-height:2px;
+width:70px;
+height:1px;
 
-background:linear-gradient(
-90deg,
-transparent,
-#D4AF37,
-transparent
-);
+background:rgba(255,255,255,0.35);
 
-margin:20px auto 25px;
-
-animation:dividerGlow 4s ease-in-out infinite;
+margin:20px auto;
 
 }
 
-/* ===== LOCATION ===== */
+/* location */
 
 .location{
 
-font-weight:400;
+font-size:.95rem;
 
-letter-spacing:3px;
+letter-spacing:2px;
 
-opacity:.85;
+opacity:.8;
 
 margin-bottom:20px;
 
 }
 
-/* ===== DESCRIPTION ===== */
+/* description */
 
 p{
 
 font-weight:300;
 
-line-height:1.8;
+line-height:1.7;
+
+margin-bottom:30px;
 
 opacity:.9;
-
-margin-bottom:28px;
-
-}
-
-/* ===== MENU TEASER ===== */
-
-.teaser{
-
-font-size:.85rem;
-
-letter-spacing:3px;
-
-opacity:.65;
-
-margin-bottom:35px;
 
 }
 
@@ -268,7 +194,7 @@ background:#7EC09F;
 
 color:#111;
 
-padding:17px 44px;
+padding:14px 36px;
 
 border-radius:40px;
 
@@ -276,119 +202,36 @@ text-decoration:none;
 
 font-weight:600;
 
-letter-spacing:1px;
-
-position:relative;
-
-overflow:hidden;
-
-transition:all .35s ease;
-
-box-shadow:
-0 10px 30px rgba(126,192,159,0.35);
-
-}
-
-/* light sweep on button */
-
-.btn::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-left:-120%;
-
-width:60%;
-height:100%;
-
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.6),
-transparent
-);
-
-transform:skewX(-25deg);
-
-animation:buttonSweep 5s infinite;
+transition:all .3s ease;
 
 }
 
 .btn:hover{
 
-transform:translateY(-4px) scale(1.07);
+transform:translateY(-2px);
 
-box-shadow:
-0 18px 45px rgba(126,192,159,0.6);
+box-shadow:0 10px 30px rgba(126,192,159,.5);
 
-}
-
-.btn:active{
-transform:scale(.95);
 }
 
 /* ===== ANIMATIONS ===== */
 
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@keyframes logoEntrance{
-0%{
-opacity:0;
-transform:translate(-50%,30px) scale(.7);
-}
-100%{
-opacity:1;
-transform:translate(-50%,0) scale(1);
-}
-}
-
 @keyframes floatLogo{
+
 0%{transform:translate(-50%,0)}
-50%{transform:translate(-50%,-12px)}
+
+50%{transform:translate(-50%,-8px)}
+
 100%{transform:translate(-50%,0)}
+
 }
 
-@keyframes logoGlow{
-0%{box-shadow:0 20px 60px rgba(0,0,0,0.9)}
-50%{box-shadow:0 20px 70px rgba(0,0,0,1),0 0 35px rgba(212,175,55,0.35)}
-100%{box-shadow:0 20px 60px rgba(0,0,0,0.9)}
-}
+@keyframes backgroundMove{
 
-@keyframes shimmer{
-0%{background-position:0%}
-100%{background-position:200%}
-}
-
-@keyframes cinematicZoom{
 0%{background-size:110%}
+
 100%{background-size:120%}
-}
 
-@keyframes glassSweep{
-0%{left:-150%}
-100%{left:150%}
-}
-
-@keyframes buttonSweep{
-0%{left:-120%}
-100%{left:140%}
-}
-
-@keyframes dividerGlow{
-0%{opacity:.6}
-50%{opacity:1}
-100%{opacity:.6}
 }
 
 /* ===== MOBILE ===== */
@@ -396,9 +239,11 @@ transform:translate(-50%,0) scale(1);
 @media(max-width:768px){
 
 .logo-wrapper{
+
 width:120px;
 height:120px;
 top:30px;
+
 }
 
 .logo img{
@@ -406,34 +251,14 @@ width:70px;
 }
 
 .container{
-margin-top:190px;
-padding:35px;
+
+margin-top:180px;
+padding:28px;
+
 }
 
 h1{
 font-size:2rem;
-}
-
-}
-
-@media(max-width:480px){
-
-.logo-wrapper{
-width:100px;
-height:100px;
-}
-
-.logo img{
-width:60px;
-}
-
-.container{
-margin-top:160px;
-padding:28px;
-}
-
-h1{
-font-size:1.6rem;
 }
 
 }
@@ -444,7 +269,9 @@ font-size:1.6rem;
 <body>
 
 <div class="logo-wrapper">
+<div class="logo">
 <img src="images/logo.jpeg" alt="Triple Two Loresho Logo">
+</div>
 </div>
 
 <div class="container">
@@ -457,14 +284,10 @@ font-size:1.6rem;
 
 <p>
 Experience refined dining and elegant atmosphere in the heart of Loresho.
-Discover flavors crafted with passion and designed for memorable moments.
+Tap below to explore our menu.
 </p>
 
-<div class="teaser">
-SIGNATURE DISHES • CRAFTED COCKTAILS • PREMIUM EXPERIENCE
-</div>
-
-<a href="menu.html" class="btn">Explore Our Menu</a>
+<a href="menu.html" class="btn">View Menu</a>
 
 </div>
 
