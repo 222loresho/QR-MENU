@@ -8,175 +8,267 @@
 <meta name="description" content="Welcome to Triple Two Loresho. Experience refined dining in Loresho, Nairobi.">
 <meta name="theme-color" content="#000000">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===== GLOBAL ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    position: relative;
+body{
+font-family:'Poppins',sans-serif;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+overflow:hidden;
+position:relative;
 
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-                url('images/landback.jpg') center/cover no-repeat;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('images/landback.jpg');
+
+background-size:cover;
+background-position:center;
+animation: backgroundMove 40s infinite alternate ease-in-out;
 }
 
-/* ===== MODERN FLOATING BLACK GLASS LOGO ===== */
+/* ===== SUBTLE PARTICLE LIGHTS ===== */
 
-.logo-wrapper {
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    box-shadow: 0 15px 50px rgba(0,0,0,0.8),
-                0 0 30px rgba(0,0,0,0.6);
-
-    animation: floatLogo 4s ease-in-out infinite;
-    z-index: 5;
+body::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle,rgba(255,255,255,0.15) 1px,transparent 1px);
+background-size:60px 60px;
+animation: particles 120s linear infinite;
+opacity:0.15;
 }
 
-.logo img {
-    width: 85px;
-    height: auto;
+/* ===== FLOATING LOGO ===== */
+
+.logo-wrapper{
+position:absolute;
+top:40px;
+left:50%;
+transform:translateX(-50%);
+width:160px;
+height:160px;
+border-radius:50%;
+
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(255,255,255,0.15);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,0.9),
+0 0 40px rgba(255,255,255,0.08);
+
+animation:
+floatLogo 5s ease-in-out infinite,
+logoGlow 4s ease-in-out infinite;
+
+z-index:5;
 }
 
-/* ===== CONTENT ===== */
-
-.container {
-    max-width: 600px;
-    padding: 20px;
-    margin-top: 220px;
-    animation: fadeUp 1.2s ease forwards;
+.logo img{
+width:90px;
+transition:transform .5s;
 }
 
-h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 15px;
+.logo-wrapper:hover img{
+transform:scale(1.1) rotate(3deg);
 }
 
-.location {
-    font-weight: 400;
-    opacity: 0.8;
-    margin-bottom: 20px;
+/* ===== MAIN CONTENT CARD ===== */
+
+.container{
+max-width:620px;
+padding:40px;
+
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,0.9);
+
+margin-top:230px;
+
+animation:fadeUp 1.4s ease forwards;
 }
 
-p {
-    font-weight: 300;
-    margin-bottom: 35px;
-    line-height: 1.6;
+/* ===== LUXURY HEADING ===== */
+
+h1{
+font-size:2.7rem;
+font-weight:600;
+margin-bottom:15px;
+
+background:linear-gradient(90deg,#ffffff,#cfcfcf,#ffffff);
+background-size:200%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation: shimmer 6s infinite linear;
 }
 
-.btn {
-    display: inline-block;
-    background: #7EC09F;
-    color: #111;
-    padding: 14px 36px;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+.location{
+font-weight:400;
+letter-spacing:2px;
+opacity:0.85;
+margin-bottom:20px;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(126,192,159,0.5);
+p{
+font-weight:300;
+margin-bottom:35px;
+line-height:1.7;
+opacity:0.9;
+}
+
+/* ===== PREMIUM BUTTON ===== */
+
+.btn{
+display:inline-block;
+background:#7EC09F;
+color:#111;
+padding:16px 40px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+letter-spacing:1px;
+
+transition:all .35s ease;
+
+box-shadow:
+0 8px 25px rgba(126,192,159,0.35);
+
+animation:buttonBreath 3s ease-in-out infinite;
+}
+
+.btn:hover{
+
+transform:translateY(-4px) scale(1.07);
+
+box-shadow:
+0 15px 40px rgba(126,192,159,0.6),
+0 0 25px rgba(126,192,159,0.5);
 }
 
 /* ===== ANIMATIONS ===== */
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-@keyframes floatLogo {
-    0% { transform: translate(-50%, 0px); }
-    50% { transform: translate(-50%, -10px); }
-    100% { transform: translate(-50%, 0px); }
+@keyframes floatLogo{
+0%{transform:translate(-50%,0)}
+50%{transform:translate(-50%,-14px)}
+100%{transform:translate(-50%,0)}
+}
+
+@keyframes logoGlow{
+0%{box-shadow:0 20px 60px rgba(0,0,0,0.9)}
+50%{box-shadow:0 25px 80px rgba(0,0,0,1),0 0 30px rgba(255,255,255,0.15)}
+100%{box-shadow:0 20px 60px rgba(0,0,0,0.9)}
+}
+
+@keyframes shimmer{
+0%{background-position:0%}
+100%{background-position:200%}
+}
+
+@keyframes buttonBreath{
+0%{transform:scale(1)}
+50%{transform:scale(1.04)}
+100%{transform:scale(1)}
+}
+
+@keyframes particles{
+0%{transform:translate(0,0)}
+100%{transform:translate(-500px,-500px)}
+}
+
+@keyframes backgroundMove{
+0%{background-position:center}
+50%{background-position:top}
+100%{background-position:bottom}
 }
 
 /* ===== MOBILE OPTIMIZATION ===== */
 
-@media(max-width: 768px) {
+@media(max-width:768px){
 
-    .logo-wrapper {
-        width: 120px;
-        height: 120px;
-        top: 30px;
-    }
-
-    .logo img {
-        width: 70px;
-    }
-
-    .container {
-        margin-top: 180px;
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    p {
-        font-size: 0.95rem;
-    }
+.logo-wrapper{
+width:120px;
+height:120px;
+top:30px;
 }
 
-@media(max-width: 480px) {
+.logo img{
+width:70px;
+}
 
-    .logo-wrapper {
-        width: 100px;
-        height: 100px;
-    }
+.container{
+margin-top:180px;
+padding:25px;
+}
 
-    .logo img {
-        width: 60px;
-    }
+h1{
+font-size:2rem;
+}
 
-    .container {
-        margin-top: 150px;
-    }
+p{
+font-size:0.95rem;
+}
+}
 
-    h1 {
-        font-size: 1.6rem;
-    }
+@media(max-width:480px){
 
-    p {
-        font-size: 0.85rem;
-    }
+.logo-wrapper{
+width:100px;
+height:100px;
+}
+
+.logo img{
+width:60px;
+}
+
+.container{
+margin-top:150px;
+}
+
+h1{
+font-size:1.6rem;
+}
+
+p{
+font-size:0.9rem;
+}
 }
 
 </style>
@@ -185,19 +277,24 @@ p {
 <body>
 
 <div class="logo-wrapper">
-    <div class="logo">
-        <img src="images/logo.jpeg" alt="Triple Two Loresho Logo">
-    </div>
+<div class="logo">
+<img src="images/logo.jpeg" alt="Triple Two Loresho Logo">
+</div>
 </div>
 
 <div class="container">
-    <h1>Welcome to Triple Two Loresho</h1>
-    <p class="location">222 Loresho, Nairobi</p>
-    <p>
-        Experience refined dining and elegant atmosphere in the heart of Loresho.
-        Tap below to explore our menu.
-    </p>
-    <a href="menu.html" class="btn">View Menu</a>
+
+<h1>Welcome to Triple Two Loresho</h1>
+
+<p class="location">222 Loresho, Nairobi</p>
+
+<p>
+Experience refined dining and an elegant atmosphere in the heart of Loresho.
+Discover flavors crafted with passion and designed for memorable moments.
+</p>
+
+<a href="menu.html" class="btn">View Menu</a>
+
 </div>
 
 </body>
