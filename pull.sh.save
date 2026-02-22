@@ -1,0 +1,6 @@
+#!/bin/bash
+cd ~/QR-MENU
+git fetch
+git status
+git pull
+echo "✅ Pull complete!"
