@@ -41,41 +41,31 @@ color:white;
 overflow:hidden;
 position:relative;
 
-padding:env(safe-area-inset-top)
-        env(safe-area-inset-right)
-        env(safe-area-inset-bottom)
-        env(safe-area-inset-left);
-
 background:
-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
 url('images/landback.jpg');
 
 background-size:110%;
 background-position:center;
 
-animation:
-cinematicZoom 35s ease-in-out infinite alternate;
+animation:cinematicZoom 40s ease-in-out infinite alternate;
 }
 
-/* ===== PARTICLES ===== */
+/* ===== CINEMATIC VIGNETTE ===== */
 
-body::before{
+body::after{
 
 content:"";
 
 position:absolute;
 
-width:200%;
-height:200%;
+inset:0;
 
-background:
-radial-gradient(circle,rgba(255,255,255,0.15) 1px,transparent 1px);
+background:radial-gradient(circle at center,
+transparent 40%,
+rgba(0,0,0,0.5) 100%);
 
-background-size:60px 60px;
-
-animation:particles 120s linear infinite;
-
-opacity:0.12;
+pointer-events:none;
 
 }
 
@@ -105,11 +95,12 @@ align-items:center;
 
 box-shadow:
 0 20px 60px rgba(0,0,0,0.9),
-0 0 40px rgba(212,175,55,0.15);
+0 0 40px rgba(212,175,55,0.2);
 
 animation:
 logoEntrance 1.2s ease,
-floatLogo 5s ease-in-out infinite;
+floatLogo 6s ease-in-out infinite,
+logoGlow 6s ease-in-out infinite;
 
 z-index:5;
 
@@ -117,36 +108,68 @@ z-index:5;
 
 .logo img{
 width:90px;
-transition:transform .5s;
 }
 
-.logo-wrapper:hover img{
-transform:scale(1.1) rotate(3deg);
-}
-
-/* ===== MAIN CONTENT CARD ===== */
+/* ===== CARD ===== */
 
 .container{
 
-max-width:620px;
+max-width:640px;
 
-padding:45px;
+padding:50px;
 
 background:rgba(0,0,0,0.45);
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 
-border-radius:22px;
+border-radius:24px;
 
-border:1px solid rgba(212,175,55,0.2);
+border:1px solid rgba(212,175,55,0.25);
 
 box-shadow:
-0 20px 60px rgba(0,0,0,0.9),
+0 25px 80px rgba(0,0,0,0.95),
 0 0 120px rgba(212,175,55,0.15);
 
-margin-top:230px;
+margin-top:240px;
+
+position:relative;
+
+transition:transform .4s ease;
 
 animation:fadeUp 1.4s ease forwards;
+
+}
+
+/* subtle hover elevation */
+
+.container:hover{
+transform:translateY(-6px);
+}
+
+/* glass reflection sweep */
+
+.container::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-150%;
+
+width:60%;
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.12),
+transparent
+);
+
+transform:skewX(-20deg);
+
+animation:glassSweep 8s infinite;
 
 }
 
@@ -158,7 +181,9 @@ font-size:2.7rem;
 
 font-weight:600;
 
-margin-bottom:12px;
+margin-bottom:14px;
+
+letter-spacing:1px;
 
 background:linear-gradient(90deg,#ffffff,#d4d4d4,#ffffff);
 
@@ -175,12 +200,19 @@ animation:shimmer 6s linear infinite;
 
 .divider{
 
-width:80px;
-height:1px;
+width:90px;
+height:2px;
 
-background:rgba(212,175,55,0.6);
+background:linear-gradient(
+90deg,
+transparent,
+#D4AF37,
+transparent
+);
 
-margin:18px auto 20px;
+margin:20px auto 25px;
+
+animation:dividerGlow 4s ease-in-out infinite;
 
 }
 
@@ -190,11 +222,11 @@ margin:18px auto 20px;
 
 font-weight:400;
 
-letter-spacing:2px;
+letter-spacing:3px;
 
 opacity:.85;
 
-margin-bottom:18px;
+margin-bottom:20px;
 
 }
 
@@ -204,11 +236,11 @@ p{
 
 font-weight:300;
 
-line-height:1.7;
+line-height:1.8;
 
 opacity:.9;
 
-margin-bottom:25px;
+margin-bottom:28px;
 
 }
 
@@ -218,11 +250,11 @@ margin-bottom:25px;
 
 font-size:.85rem;
 
-letter-spacing:2px;
+letter-spacing:3px;
 
-opacity:.7;
+opacity:.65;
 
-margin-bottom:30px;
+margin-bottom:35px;
 
 }
 
@@ -236,7 +268,7 @@ background:#7EC09F;
 
 color:#111;
 
-padding:16px 42px;
+padding:17px 44px;
 
 border-radius:40px;
 
@@ -246,12 +278,41 @@ font-weight:600;
 
 letter-spacing:1px;
 
+position:relative;
+
+overflow:hidden;
+
 transition:all .35s ease;
 
 box-shadow:
-0 8px 25px rgba(126,192,159,0.35);
+0 10px 30px rgba(126,192,159,0.35);
 
-animation:buttonBreath 3s ease-in-out infinite;
+}
+
+/* light sweep on button */
+
+.btn::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:60%;
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.6),
+transparent
+);
+
+transform:skewX(-25deg);
+
+animation:buttonSweep 5s infinite;
 
 }
 
@@ -260,13 +321,12 @@ animation:buttonBreath 3s ease-in-out infinite;
 transform:translateY(-4px) scale(1.07);
 
 box-shadow:
-0 15px 40px rgba(126,192,159,0.6),
-0 0 25px rgba(126,192,159,0.5);
+0 18px 45px rgba(126,192,159,0.6);
 
 }
 
 .btn:active{
-transform:scale(.96);
+transform:scale(.95);
 }
 
 /* ===== ANIMATIONS ===== */
@@ -295,8 +355,14 @@ transform:translate(-50%,0) scale(1);
 
 @keyframes floatLogo{
 0%{transform:translate(-50%,0)}
-50%{transform:translate(-50%,-14px)}
+50%{transform:translate(-50%,-12px)}
 100%{transform:translate(-50%,0)}
+}
+
+@keyframes logoGlow{
+0%{box-shadow:0 20px 60px rgba(0,0,0,0.9)}
+50%{box-shadow:0 20px 70px rgba(0,0,0,1),0 0 35px rgba(212,175,55,0.35)}
+100%{box-shadow:0 20px 60px rgba(0,0,0,0.9)}
 }
 
 @keyframes shimmer{
@@ -304,20 +370,25 @@ transform:translate(-50%,0) scale(1);
 100%{background-position:200%}
 }
 
-@keyframes buttonBreath{
-0%{transform:scale(1)}
-50%{transform:scale(1.04)}
-100%{transform:scale(1)}
-}
-
-@keyframes particles{
-0%{transform:translate(0,0)}
-100%{transform:translate(-500px,-500px)}
-}
-
 @keyframes cinematicZoom{
 0%{background-size:110%}
 100%{background-size:120%}
+}
+
+@keyframes glassSweep{
+0%{left:-150%}
+100%{left:150%}
+}
+
+@keyframes buttonSweep{
+0%{left:-120%}
+100%{left:140%}
+}
+
+@keyframes dividerGlow{
+0%{opacity:.6}
+50%{opacity:1}
+100%{opacity:.6}
 }
 
 /* ===== MOBILE ===== */
@@ -335,8 +406,8 @@ width:70px;
 }
 
 .container{
-margin-top:180px;
-padding:30px;
+margin-top:190px;
+padding:35px;
 }
 
 h1{
@@ -357,7 +428,8 @@ width:60px;
 }
 
 .container{
-margin-top:150px;
+margin-top:160px;
+padding:28px;
 }
 
 h1{
@@ -372,9 +444,7 @@ font-size:1.6rem;
 <body>
 
 <div class="logo-wrapper">
-<div class="logo">
 <img src="images/logo.jpeg" alt="Triple Two Loresho Logo">
-</div>
 </div>
 
 <div class="container">
