@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Triple Two Loresho | Welcome</title>
 
 <meta name="description" content="Welcome to Triple Two Loresho. Experience refined dining in Loresho, Nairobi.">
 <meta name="theme-color" content="#000000">
+
+<link rel="preload" as="image" href="images/landback.jpg">
+<link rel="icon" href="images/logo.jpeg">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -21,54 +26,78 @@ box-sizing:border-box;
 }
 
 body{
+
 font-family:'Poppins',sans-serif;
+
 min-height:100vh;
+
 display:flex;
 justify-content:center;
 align-items:center;
+
 text-align:center;
 color:white;
+
 overflow:hidden;
 position:relative;
+
+padding:env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);
 
 background:
 linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
 url('images/landback.jpg');
 
-background-size:cover;
+background-size:110%;
 background-position:center;
-animation: backgroundMove 40s infinite alternate ease-in-out;
+
+animation:
+cinematicZoom 35s ease-in-out infinite alternate;
 }
 
-/* ===== SUBTLE PARTICLE LIGHTS ===== */
+/* ===== PARTICLES ===== */
 
 body::before{
+
 content:"";
+
 position:absolute;
+
 width:200%;
 height:200%;
+
 background:
 radial-gradient(circle,rgba(255,255,255,0.15) 1px,transparent 1px);
+
 background-size:60px 60px;
-animation: particles 120s linear infinite;
-opacity:0.15;
+
+animation:particles 120s linear infinite;
+
+opacity:0.12;
+
 }
 
 /* ===== FLOATING LOGO ===== */
 
 .logo-wrapper{
+
 position:absolute;
 top:40px;
 left:50%;
+
 transform:translateX(-50%);
+
 width:160px;
 height:160px;
+
 border-radius:50%;
 
 background:rgba(0,0,0,0.75);
 backdrop-filter:blur(14px);
 
-border:1px solid rgba(255,255,255,0.15);
+border:1px solid rgba(212,175,55,0.35);
 
 display:flex;
 justify-content:center;
@@ -76,13 +105,14 @@ align-items:center;
 
 box-shadow:
 0 20px 60px rgba(0,0,0,0.9),
-0 0 40px rgba(255,255,255,0.08);
+0 0 40px rgba(212,175,55,0.15);
 
 animation:
-floatLogo 5s ease-in-out infinite,
-logoGlow 4s ease-in-out infinite;
+logoEntrance 1.2s ease,
+floatLogo 5s ease-in-out infinite;
 
 z-index:5;
+
 }
 
 .logo img{
@@ -97,62 +127,123 @@ transform:scale(1.1) rotate(3deg);
 /* ===== MAIN CONTENT CARD ===== */
 
 .container{
+
 max-width:620px;
-padding:40px;
+
+padding:45px;
 
 background:rgba(0,0,0,0.45);
+
 backdrop-filter:blur(10px);
 
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.08);
+border-radius:22px;
+
+border:1px solid rgba(212,175,55,0.2);
 
 box-shadow:
-0 20px 60px rgba(0,0,0,0.9);
+0 20px 60px rgba(0,0,0,0.9),
+0 0 120px rgba(212,175,55,0.15);
 
 margin-top:230px;
 
 animation:fadeUp 1.4s ease forwards;
+
 }
 
-/* ===== LUXURY HEADING ===== */
+/* ===== TITLE ===== */
 
 h1{
-font-size:2.7rem;
-font-weight:600;
-margin-bottom:15px;
 
-background:linear-gradient(90deg,#ffffff,#cfcfcf,#ffffff);
+font-size:2.7rem;
+
+font-weight:600;
+
+margin-bottom:12px;
+
+background:linear-gradient(90deg,#ffffff,#d4d4d4,#ffffff);
+
 background-size:200%;
+
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
-animation: shimmer 6s infinite linear;
+animation:shimmer 6s linear infinite;
+
 }
+
+/* ===== DIVIDER ===== */
+
+.divider{
+
+width:80px;
+height:1px;
+
+background:rgba(212,175,55,0.6);
+
+margin:18px auto 20px;
+
+}
+
+/* ===== LOCATION ===== */
 
 .location{
+
 font-weight:400;
+
 letter-spacing:2px;
-opacity:0.85;
-margin-bottom:20px;
+
+opacity:.85;
+
+margin-bottom:18px;
+
 }
+
+/* ===== DESCRIPTION ===== */
 
 p{
+
 font-weight:300;
-margin-bottom:35px;
+
 line-height:1.7;
-opacity:0.9;
+
+opacity:.9;
+
+margin-bottom:25px;
+
 }
 
-/* ===== PREMIUM BUTTON ===== */
+/* ===== MENU TEASER ===== */
+
+.teaser{
+
+font-size:.85rem;
+
+letter-spacing:2px;
+
+opacity:.7;
+
+margin-bottom:30px;
+
+}
+
+/* ===== BUTTON ===== */
 
 .btn{
+
 display:inline-block;
+
 background:#7EC09F;
+
 color:#111;
-padding:16px 40px;
+
+padding:16px 42px;
+
 border-radius:40px;
+
 text-decoration:none;
+
 font-weight:600;
+
 letter-spacing:1px;
 
 transition:all .35s ease;
@@ -161,6 +252,7 @@ box-shadow:
 0 8px 25px rgba(126,192,159,0.35);
 
 animation:buttonBreath 3s ease-in-out infinite;
+
 }
 
 .btn:hover{
@@ -170,6 +262,11 @@ transform:translateY(-4px) scale(1.07);
 box-shadow:
 0 15px 40px rgba(126,192,159,0.6),
 0 0 25px rgba(126,192,159,0.5);
+
+}
+
+.btn:active{
+transform:scale(.96);
 }
 
 /* ===== ANIMATIONS ===== */
@@ -185,16 +282,21 @@ transform:translateY(0);
 }
 }
 
+@keyframes logoEntrance{
+0%{
+opacity:0;
+transform:translate(-50%,30px) scale(.7);
+}
+100%{
+opacity:1;
+transform:translate(-50%,0) scale(1);
+}
+}
+
 @keyframes floatLogo{
 0%{transform:translate(-50%,0)}
 50%{transform:translate(-50%,-14px)}
 100%{transform:translate(-50%,0)}
-}
-
-@keyframes logoGlow{
-0%{box-shadow:0 20px 60px rgba(0,0,0,0.9)}
-50%{box-shadow:0 25px 80px rgba(0,0,0,1),0 0 30px rgba(255,255,255,0.15)}
-100%{box-shadow:0 20px 60px rgba(0,0,0,0.9)}
 }
 
 @keyframes shimmer{
@@ -213,13 +315,12 @@ transform:translateY(0);
 100%{transform:translate(-500px,-500px)}
 }
 
-@keyframes backgroundMove{
-0%{background-position:center}
-50%{background-position:top}
-100%{background-position:bottom}
+@keyframes cinematicZoom{
+0%{background-size:110%}
+100%{background-size:120%}
 }
 
-/* ===== MOBILE OPTIMIZATION ===== */
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
 
@@ -235,16 +336,13 @@ width:70px;
 
 .container{
 margin-top:180px;
-padding:25px;
+padding:30px;
 }
 
 h1{
 font-size:2rem;
 }
 
-p{
-font-size:0.95rem;
-}
 }
 
 @media(max-width:480px){
@@ -266,9 +364,6 @@ h1{
 font-size:1.6rem;
 }
 
-p{
-font-size:0.9rem;
-}
 }
 
 </style>
@@ -286,14 +381,20 @@ font-size:0.9rem;
 
 <h1>Welcome to Triple Two Loresho</h1>
 
+<div class="divider"></div>
+
 <p class="location">222 Loresho, Nairobi</p>
 
 <p>
-Experience refined dining and an elegant atmosphere in the heart of Loresho.
+Experience refined dining and elegant atmosphere in the heart of Loresho.
 Discover flavors crafted with passion and designed for memorable moments.
 </p>
 
-<a href="menu.html" class="btn">View Menu</a>
+<div class="teaser">
+SIGNATURE DISHES • CRAFTED COCKTAILS • PREMIUM EXPERIENCE
+</div>
+
+<a href="menu.html" class="btn">Explore Our Menu</a>
 
 </div>
 
