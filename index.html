@@ -10,7 +10,6 @@
 <meta name="description" content="Welcome to Triple Two Loresho. Experience refined dining in Loresho, Nairobi.">
 <meta name="theme-color" content="#000000">
 
-<link rel="preload" as="image" href="images/landback.jpg">
 <link rel="icon" href="images/logo.jpeg">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -33,27 +32,43 @@ justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
+position:relative;
+
+/* LUXURY RESTAURANT / BAR BACKGROUND */
 
 background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url('images/landback.jpg');
+linear-gradient(
+rgba(0,0,0,0.75),
+rgba(0,0,0,0.65)
+),
+url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80");
+
 background-size:110%;
 background-position:center;
+background-repeat:no-repeat;
+
 animation:backgroundMove 40s ease-in-out infinite alternate;
 }
 
-/* subtle vignette */
+/* cinematic vignette */
+
 body::after{
 content:"";
 position:absolute;
 inset:0;
-background:radial-gradient(circle at center,
+
+background:
+radial-gradient(
+circle at center,
 transparent 45%,
-rgba(0,0,0,0.55) 100%);
+rgba(0,0,0,0.65) 100%
+);
+
 pointer-events:none;
 }
 
 /* ===== FLOATING GLASS LOGO ===== */
+
 .logo-wrapper{
 position:absolute;
 top:40px;
@@ -65,7 +80,8 @@ border-radius:50%;
 
 background:rgba(0,0,0,0.75);
 backdrop-filter:blur(12px);
-border:2px solid rgba(212,175,55,0.6); /* GOLD BORDER */
+
+border:2px solid rgba(212,175,55,0.6);
 
 display:flex;
 justify-content:center;
@@ -73,7 +89,7 @@ align-items:center;
 
 box-shadow:
 0 15px 50px rgba(0,0,0,0.8),
-0 0 30px rgba(212,175,55,0.3); /* subtle gold glow */
+0 0 30px rgba(212,175,55,0.3);
 
 animation:floatLogo 4s ease-in-out infinite;
 
@@ -86,6 +102,7 @@ height:auto;
 }
 
 /* ===== CONTENT ===== */
+
 .container{
 max-width:600px;
 padding:40px;
@@ -95,11 +112,14 @@ background:rgba(0,0,0,0.35);
 backdrop-filter:blur(8px);
 
 border-radius:18px;
-border:1px solid rgba(212,175,55,0.3); /* GOLD BORDER */
+
+border:1px solid rgba(212,175,55,0.3);
+
 box-shadow:0 20px 60px rgba(0,0,0,0.8);
 }
 
 /* ===== TITLE ===== */
+
 h1{
 font-size:2.6rem;
 font-weight:600;
@@ -108,14 +128,23 @@ letter-spacing:.5px;
 }
 
 /* divider */
+
 .divider{
 width:80px;
 height:2px;
-background:linear-gradient(90deg,transparent,#D4AF37,transparent); /* GOLD GRADIENT */
+
+background:linear-gradient(
+90deg,
+transparent,
+#D4AF37,
+transparent
+);
+
 margin:20px auto;
 }
 
 /* location */
+
 .location{
 font-size:.95rem;
 letter-spacing:2px;
@@ -124,6 +153,7 @@ margin-bottom:20px;
 }
 
 /* description */
+
 p{
 font-weight:300;
 line-height:1.7;
@@ -132,6 +162,7 @@ opacity:.9;
 }
 
 /* ===== BUTTON ===== */
+
 .btn{
 display:inline-block;
 background:#7EC09F;
@@ -142,12 +173,14 @@ text-decoration:none;
 font-weight:600;
 transition:all .3s ease;
 }
+
 .btn:hover{
 transform:translateY(-2px);
 box-shadow:0 10px 30px rgba(126,192,159,.5);
 }
 
 /* ===== ANIMATIONS ===== */
+
 @keyframes floatLogo{
 0%{transform:translate(-50%,0)}
 50%{transform:translate(-50%,-8px)}
@@ -160,39 +193,50 @@ box-shadow:0 10px 30px rgba(126,192,159,.5);
 }
 
 /* ===== MOBILE ===== */
+
 @media(max-width:768px){
+
 .logo-wrapper{
 width:120px;
 height:120px;
 top:30px;
 }
+
 .logo img{
 width:70px;
 }
+
 .container{
 margin-top:180px;
 padding:28px;
 }
+
 h1{
 font-size:2rem;
 }
+
 }
 
 @media(max-width:480px){
+
 .logo-wrapper{
 width:100px;
 height:100px;
 }
+
 .logo img{
 width:60px;
 }
+
 .container{
 margin-top:160px;
 padding:25px;
 }
+
 h1{
 font-size:1.6rem;
 }
+
 }
 
 </style>
