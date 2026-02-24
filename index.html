@@ -34,8 +34,6 @@ text-align:center;
 color:white;
 position:relative;
 
-/* optimized hero background */
-
 background:
 linear-gradient(
 rgba(0,0,0,0.75),
@@ -51,7 +49,7 @@ background-position:center;
 background-repeat:no-repeat;
 }
 
-/* cinematic vignette */
+/* vignette */
 
 body::after{
 content:"";
@@ -141,22 +139,34 @@ margin:22px auto;
 font-size:1rem;
 letter-spacing:3px;
 opacity:.9;
-margin-bottom:22px;
-
-text-shadow:0 2px 8px rgba(0,0,0,0.8);
+margin-bottom:18px;
 }
 
 p{
 font-weight:300;
 line-height:1.7;
-margin-bottom:35px;
+margin-bottom:20px;
 opacity:.95;
 font-size:1.05rem;
+}
 
-text-shadow:0 2px 8px rgba(0,0,0,0.75);
+/* opening hours */
+
+.hours{
+font-size:0.9rem;
+opacity:0.8;
+margin-bottom:30px;
 }
 
 /* ===== BUTTONS ===== */
+
+.btn-group{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:14px;
+margin-bottom:10px;
+}
 
 .btn{
 display:inline-block;
@@ -173,7 +183,6 @@ font-weight:600;
 font-size:1rem;
 
 transition:all .3s ease;
-margin:10px;
 }
 
 .btn:hover{
@@ -181,7 +190,7 @@ transform:translateY(-3px);
 box-shadow:0 15px 35px rgba(126,192,159,.6);
 }
 
-/* secondary buttons */
+/* secondary */
 
 .btn-secondary{
 background:transparent;
@@ -194,10 +203,10 @@ border:1px solid rgba(212,175,55,0.5);
 background:rgba(212,175,55,0.15);
 }
 
-/* social */
+/* ===== SOCIAL ===== */
 
 .social{
-margin-top:25px;
+margin-top:20px;
 font-size:.9rem;
 opacity:.85;
 }
@@ -206,6 +215,14 @@ opacity:.85;
 color:#D4AF37;
 text-decoration:none;
 margin-left:6px;
+}
+
+/* trust badge */
+
+.trust{
+margin-top:15px;
+font-size:0.85rem;
+opacity:0.85;
 }
 
 /* ===== ANIMATION ===== */
@@ -236,6 +253,11 @@ padding:45px 35px;
 
 h1{
 font-size:2.2rem;
+}
+
+.btn-secondary{
+padding:12px 28px;
+font-size:0.95rem;
 }
 
 }
@@ -269,7 +291,7 @@ font-size:1.8rem;
 
 <div class="logo-wrapper">
 <div class="logo">
-<img src="images/logo.jpeg" alt="Triple Two Loresho Logo">
+<img src="images/logo.jpeg" alt="Triple Two Loresho Logo" loading="eager" fetchpriority="high">
 </div>
 </div>
 
@@ -286,17 +308,25 @@ Experience refined dining and elegant atmosphere in the heart of Loresho.
 Tap below to explore our menu or reserve your table.
 </p>
 
+<p class="hours">Open daily 11 AM – late</p>
+
+<div class="btn-group">
+
 <a href="menu.html" class="btn">View Menu</a>
 
-<br>
-
-<a href="tel:0735838772" class="btn btn-secondary">Call to Reserve</a>
+<a href="tel:0735838772" class="btn btn-secondary">Call</a>
 
 <a href="https://wa.me/254735838772" class="btn btn-secondary">WhatsApp</a>
+
+</div>
 
 <div class="social">
 Follow us on Instagram
 <a href="https://instagram.com/tripletwoloresho" target="_blank">@tripletwoloresho</a>
+</div>
+
+<div class="trust">
+Rated 4.3 ★ on Google
 </div>
 
 </div>
