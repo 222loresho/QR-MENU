@@ -43,11 +43,10 @@ rgba(0,0,0,0.65)
 ),
 url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80");
 
-background-size:110%;
+background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
-
-animation:backgroundMove 40s ease-in-out infinite alternate;
+background-attachment:fixed;
 }
 
 /* cinematic vignette */
@@ -185,11 +184,6 @@ box-shadow:0 10px 30px rgba(126,192,159,.5);
 0%{transform:translate(-50%,0)}
 50%{transform:translate(-50%,-8px)}
 100%{transform:translate(-50%,0)}
-}
-
-@keyframes backgroundMove{
-0%{background-size:110%}
-100%{background-size:120%}
 }
 
 /* ===== MOBILE ===== */
