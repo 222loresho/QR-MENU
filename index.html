@@ -34,12 +34,17 @@ text-align:center;
 color:white;
 position:relative;
 
+/* optimized hero background */
+
 background:
 linear-gradient(
 rgba(0,0,0,0.75),
 rgba(0,0,0,0.65)
 ),
-url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80");
+image-set(
+url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=70&fm=webp") 1x,
+url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=75&fm=webp") 2x
+);
 
 background-size:cover;
 background-position:center;
@@ -54,11 +59,7 @@ position:absolute;
 inset:0;
 
 background:
-radial-gradient(
-circle at center,
-transparent 40%,
-rgba(0,0,0,0.7) 100%
-);
+radial-gradient(circle at center,transparent 40%,rgba(0,0,0,0.7) 100%);
 
 pointer-events:none;
 }
@@ -98,18 +99,16 @@ width:160px;
 height:auto;
 }
 
-/* ===== CONTENT CONTAINER ===== */
+/* ===== CONTAINER ===== */
 
 .container{
-
 width:90%;
 max-width:750px;
 
 padding:60px 50px;
-
 margin-top:330px;
 
-background:rgba(0,0,0,0.60);
+background:rgba(0,0,0,0.65);
 backdrop-filter:blur(10px);
 
 border-radius:22px;
@@ -130,23 +129,13 @@ letter-spacing:.5px;
 text-shadow:0 4px 12px rgba(0,0,0,0.85);
 }
 
-/* divider */
-
 .divider{
 width:100px;
 height:2px;
 
-background:linear-gradient(
-90deg,
-transparent,
-#D4AF37,
-transparent
-);
-
+background:linear-gradient(90deg,transparent,#D4AF37,transparent);
 margin:22px auto;
 }
-
-/* location */
 
 .location{
 font-size:1rem;
@@ -156,8 +145,6 @@ margin-bottom:22px;
 
 text-shadow:0 2px 8px rgba(0,0,0,0.8);
 }
-
-/* description */
 
 p{
 font-weight:300;
@@ -169,7 +156,7 @@ font-size:1.05rem;
 text-shadow:0 2px 8px rgba(0,0,0,0.75);
 }
 
-/* ===== BUTTON ===== */
+/* ===== BUTTONS ===== */
 
 .btn{
 display:inline-block;
@@ -186,6 +173,7 @@ font-weight:600;
 font-size:1rem;
 
 transition:all .3s ease;
+margin:10px;
 }
 
 .btn:hover{
@@ -193,7 +181,34 @@ transform:translateY(-3px);
 box-shadow:0 15px 35px rgba(126,192,159,.6);
 }
 
-/* ===== ANIMATIONS ===== */
+/* secondary buttons */
+
+.btn-secondary{
+background:transparent;
+color:white;
+
+border:1px solid rgba(212,175,55,0.5);
+}
+
+.btn-secondary:hover{
+background:rgba(212,175,55,0.15);
+}
+
+/* social */
+
+.social{
+margin-top:25px;
+font-size:.9rem;
+opacity:.85;
+}
+
+.social a{
+color:#D4AF37;
+text-decoration:none;
+margin-left:6px;
+}
+
+/* ===== ANIMATION ===== */
 
 @keyframes floatLogo{
 0%{transform:translate(-50%,0)}
@@ -201,7 +216,7 @@ box-shadow:0 15px 35px rgba(126,192,159,.6);
 100%{transform:translate(-50%,0)}
 }
 
-/* ===== TABLET ===== */
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
 
@@ -224,8 +239,6 @@ font-size:2.2rem;
 }
 
 }
-
-/* ===== MOBILE ===== */
 
 @media(max-width:480px){
 
@@ -270,10 +283,21 @@ font-size:1.8rem;
 
 <p>
 Experience refined dining and elegant atmosphere in the heart of Loresho.
-Tap below to explore our menu.
+Tap below to explore our menu or reserve your table.
 </p>
 
 <a href="menu.html" class="btn">View Menu</a>
+
+<br>
+
+<a href="tel:0735838772" class="btn btn-secondary">Call to Reserve</a>
+
+<a href="https://wa.me/254735838772" class="btn btn-secondary">WhatsApp</a>
+
+<div class="social">
+Follow us on Instagram
+<a href="https://instagram.com/tripletwoloresho" target="_blank">@tripletwoloresho</a>
+</div>
 
 </div>
 
