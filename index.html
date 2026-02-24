@@ -44,10 +44,9 @@ url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fi
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
-background-attachment:fixed;
 }
 
-/* vignette */
+/* cinematic vignette */
 
 body::after{
 content:"";
@@ -57,36 +56,37 @@ inset:0;
 background:
 radial-gradient(
 circle at center,
-transparent 45%,
-rgba(0,0,0,0.65) 100%
+transparent 40%,
+rgba(0,0,0,0.7) 100%
 );
 
 pointer-events:none;
 }
 
-/* ===== FLOATING GLASS LOGO ===== */
+/* ===== LOGO ===== */
 
 .logo-wrapper{
 position:absolute;
 top:40px;
 left:50%;
 transform:translateX(-50%);
-width:190px;
-height:190px;
+
+width:240px;
+height:240px;
 border-radius:50%;
 
-background:rgba(0,0,0,0.8);
-backdrop-filter:blur(14px);
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(16px);
 
-border:2px solid rgba(212,175,55,0.6);
+border:3px solid rgba(212,175,55,0.7);
 
 display:flex;
 justify-content:center;
 align-items:center;
 
 box-shadow:
-0 20px 60px rgba(0,0,0,0.9),
-0 0 40px rgba(212,175,55,0.4);
+0 25px 70px rgba(0,0,0,0.9),
+0 0 50px rgba(212,175,55,0.45);
 
 animation:floatLogo 4s ease-in-out infinite;
 
@@ -94,38 +94,44 @@ z-index:5;
 }
 
 .logo img{
-width:120px;
+width:160px;
 height:auto;
 }
 
-/* ===== CONTENT ===== */
+/* ===== CONTENT CONTAINER ===== */
 
 .container{
-max-width:600px;
-padding:40px;
-margin-top:260px;
 
-background:rgba(0,0,0,0.35);
-backdrop-filter:blur(8px);
+width:90%;
+max-width:750px;
 
-border-radius:18px;
+padding:60px 50px;
 
-border:1px solid rgba(212,175,55,0.3);
+margin-top:330px;
 
-box-shadow:0 20px 60px rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(10px);
+
+border-radius:22px;
+
+border:1px solid rgba(212,175,55,0.4);
+
+box-shadow:0 25px 70px rgba(0,0,0,0.9);
 }
 
 /* ===== TITLE ===== */
 
 h1{
-font-size:2.6rem;
+font-size:3rem;
 font-weight:600;
 margin-bottom:15px;
 letter-spacing:.5px;
 }
 
+/* divider */
+
 .divider{
-width:80px;
+width:100px;
 height:2px;
 
 background:linear-gradient(
@@ -135,21 +141,26 @@ transparent,
 transparent
 );
 
-margin:20px auto;
+margin:22px auto;
 }
 
+/* location */
+
 .location{
-font-size:.95rem;
-letter-spacing:2px;
-opacity:.8;
-margin-bottom:20px;
+font-size:1rem;
+letter-spacing:3px;
+opacity:.85;
+margin-bottom:22px;
 }
+
+/* description */
 
 p{
 font-weight:300;
 line-height:1.7;
-margin-bottom:30px;
-opacity:.9;
+margin-bottom:35px;
+opacity:.95;
+font-size:1.05rem;
 }
 
 /* ===== BUTTON ===== */
@@ -158,23 +169,29 @@ opacity:.9;
 display:inline-block;
 background:#7EC09F;
 color:#111;
-padding:14px 36px;
+
+padding:16px 42px;
+
 border-radius:40px;
+
 text-decoration:none;
 font-weight:600;
+
+font-size:1rem;
+
 transition:all .3s ease;
 }
 
 .btn:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 30px rgba(126,192,159,.5);
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(126,192,159,.6);
 }
 
 /* ===== ANIMATIONS ===== */
 
 @keyframes floatLogo{
 0%{transform:translate(-50%,0)}
-50%{transform:translate(-50%,-10px)}
+50%{transform:translate(-50%,-12px)}
 100%{transform:translate(-50%,0)}
 }
 
@@ -183,22 +200,21 @@ box-shadow:0 10px 30px rgba(126,192,159,.5);
 @media(max-width:768px){
 
 .logo-wrapper{
-width:150px;
-height:150px;
-top:30px;
+width:190px;
+height:190px;
 }
 
 .logo img{
-width:95px;
+width:125px;
 }
 
 .container{
-margin-top:210px;
-padding:28px;
+margin-top:280px;
+padding:45px 35px;
 }
 
 h1{
-font-size:2rem;
+font-size:2.2rem;
 }
 
 }
@@ -208,21 +224,21 @@ font-size:2rem;
 @media(max-width:480px){
 
 .logo-wrapper{
-width:130px;
-height:130px;
+width:150px;
+height:150px;
 }
 
 .logo img{
-width:80px;
+width:95px;
 }
 
 .container{
-margin-top:190px;
-padding:25px;
+margin-top:240px;
+padding:35px 25px;
 }
 
 h1{
-font-size:1.6rem;
+font-size:1.8rem;
 }
 
 }
