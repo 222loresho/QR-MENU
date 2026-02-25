@@ -78,8 +78,6 @@ border-radius:28px;
 background:rgba(0,0,0,0.85);
 backdrop-filter:blur(16px);
 
-border:3px solid rgba(212,175,55,0.7);
-
 display:flex;
 justify-content:center;
 align-items:center;
@@ -88,11 +86,38 @@ overflow:hidden;
 
 box-shadow:
 0 25px 70px rgba(0,0,0,0.9),
-0 0 30px rgba(212,175,55,0.4);
+0 0 30px rgba(212,175,55,0.35);
 
 animation:floatLogo 4s ease-in-out infinite;
 
 z-index:5;
+}
+
+/* fading gold border */
+
+.logo-wrapper::before{
+content:"";
+position:absolute;
+inset:0;
+border-radius:28px;
+padding:2px;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(212,175,55,0.8),
+rgba(212,175,55,0.3),
+transparent
+);
+
+-webkit-mask:
+linear-gradient(#000 0 0) content-box,
+linear-gradient(#000 0 0);
+
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+
+pointer-events:none;
 }
 
 .logo{
@@ -109,7 +134,7 @@ height:80%;
 object-fit:contain;
 display:block;
 
-filter:drop-shadow(0 0 8px rgba(212,175,55,0.6));
+filter:drop-shadow(0 0 10px rgba(212,175,55,0.6));
 }
 
 /* ===== CONTAINER ===== */
