@@ -83,6 +83,8 @@ display:flex;
 justify-content:center;
 align-items:center;
 
+padding:18px;
+
 box-shadow:0 20px 50px rgba(0,0,0,0.85);
 
 animation:floatLogo 4s ease-in-out infinite;
@@ -91,16 +93,17 @@ z-index:5;
 }
 
 .logo{
-display:flex;
-justify-content:center;
-align-items:center;
 width:100%;
 height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .logo img{
-max-width:70%;
-height:auto;
+width:100%;
+height:100%;
+object-fit:contain;
 display:block;
 }
 
@@ -238,10 +241,6 @@ margin-left:6px;
 .logo-wrapper{
 width:200px;
 height:160px;
-}
-
-.logo img{
-max-width:70%;
 }
 
 .container{
