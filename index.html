@@ -71,70 +71,37 @@ left:50%;
 transform:translateX(-50%);
 
 width:260px;
-height:170px;
+height:200px;
 
 border-radius:28px;
 
-background:rgba(0,0,0,0.85);
-backdrop-filter:blur(16px);
+background:#000;
+
+border:3px solid rgba(212,175,55,0.45);
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-overflow:hidden;
-
-box-shadow:
-0 25px 70px rgba(0,0,0,0.9),
-0 0 30px rgba(212,175,55,0.35);
+box-shadow:0 20px 50px rgba(0,0,0,0.85);
 
 animation:floatLogo 4s ease-in-out infinite;
 
 z-index:5;
 }
 
-/* fading gold border */
-
-.logo-wrapper::before{
-content:"";
-position:absolute;
-inset:0;
-border-radius:28px;
-padding:2px;
-
-background:linear-gradient(
-120deg,
-transparent,
-rgba(212,175,55,0.8),
-rgba(212,175,55,0.3),
-transparent
-);
-
--webkit-mask:
-linear-gradient(#000 0 0) content-box,
-linear-gradient(#000 0 0);
-
--webkit-mask-composite:xor;
-mask-composite:exclude;
-
-pointer-events:none;
-}
-
 .logo{
-width:100%;
-height:100%;
 display:flex;
 justify-content:center;
 align-items:center;
+width:100%;
+height:100%;
 }
 
 .logo img{
-width:80%;
-height:80%;
-object-fit:contain;
+max-width:70%;
+height:auto;
 display:block;
-
-filter:drop-shadow(0 0 10px rgba(212,175,55,0.6));
 }
 
 /* ===== CONTAINER ===== */
@@ -144,14 +111,13 @@ width:90%;
 max-width:750px;
 
 padding:60px 50px;
-margin-top:300px;
+margin-top:330px;
 
-background:rgba(0,0,0,0.65);
-backdrop-filter:blur(10px);
+background:#000;
 
 border-radius:22px;
 
-border:1px solid rgba(212,175,55,0.4);
+border:1px solid rgba(212,175,55,0.35);
 
 box-shadow:0 25px 70px rgba(0,0,0,0.9);
 }
@@ -236,7 +202,7 @@ box-shadow:0 15px 35px rgba(126,192,159,.6);
 background:transparent;
 color:white;
 
-border:1px solid rgba(212,175,55,0.5);
+border:1px solid rgba(212,175,55,0.45);
 }
 
 .btn-secondary:hover{
@@ -261,7 +227,7 @@ margin-left:6px;
 
 @keyframes floatLogo{
 0%{transform:translate(-50%,0)}
-50%{transform:translate(-50%,-12px)}
+50%{transform:translate(-50%,-10px)}
 100%{transform:translate(-50%,0)}
 }
 
@@ -270,12 +236,16 @@ margin-left:6px;
 @media(max-width:768px){
 
 .logo-wrapper{
-width:220px;
-height:140px;
+width:200px;
+height:160px;
+}
+
+.logo img{
+max-width:70%;
 }
 
 .container{
-margin-top:260px;
+margin-top:270px;
 padding:45px 35px;
 }
 
@@ -283,22 +253,17 @@ h1{
 font-size:2.2rem;
 }
 
-.btn-secondary{
-padding:12px 28px;
-font-size:0.95rem;
-}
-
 }
 
 @media(max-width:480px){
 
 .logo-wrapper{
-width:180px;
-height:120px;
+width:170px;
+height:140px;
 }
 
 .container{
-margin-top:220px;
+margin-top:240px;
 padding:35px 25px;
 }
 
