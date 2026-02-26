@@ -10,303 +10,411 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:wght@400;600&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg-dark:#0f1f1b;
-  --card-bg:rgba(255,255,255,.08);
-  --accent:#7EC09F;
-  --hover-border:#FFD54F;
-  --text-light:#f4f7f6;
-  --text-muted:#cbd5d1;
+
+:root{
+--bg-dark:#0f1f1b;
+--card-bg:rgba(255,255,255,.08);
+--accent:#7EC09F;
+--hover-border:#FFD54F;
+--text-light:#f4f7f6;
+--text-muted:#cbd5d1;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
 body{
-  font-family:'Roboto Slab',serif;
-  background:linear-gradient(135deg,#000 0%,var(--bg-dark) 45%,var(--accent) 140%);
-  color:var(--text-light);
-  min-height:100vh;
-  position:relative;
+font-family:'Roboto Slab',serif;
+background:linear-gradient(135deg,#000 0%,var(--bg-dark) 45%,var(--accent) 140%);
+color:var(--text-light);
+min-height:100vh;
+position:relative;
 }
 
+/* subtle background texture replacement */
+
 body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:url("https://media.gettyimages.com/id/1076130232/vector/food-and-drink-icons-set-3-light-line-series.jpg?s=612x612&w=0&k=20&c=Xw_culYzHFeHApCiYMGnQ9yOsLl0JGOk0kMOz6V5mu8=");
-  background-size:260px;
-  opacity:.07;
-  pointer-events:none;
-  z-index:0;
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 30%, rgba(255,255,255,.05), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(255,255,255,.05), transparent 40%);
+pointer-events:none;
+z-index:0;
 }
 
 main{
-  max-width:1200px;
-  margin:auto;
-  padding:1.5rem;
-  position:relative;
-  z-index:1;
+max-width:1200px;
+margin:auto;
+padding:1.5rem;
+position:relative;
+z-index:1;
 }
 
-header{text-align:center;margin-bottom:3rem}
+header{
+text-align:center;
+margin-bottom:3rem;
+}
 
-section{margin-bottom:3rem}
+section{
+margin-bottom:3rem;
+}
+
 section h2{
-  font-family:'Playfair Display',serif;
-  font-size:1.6rem;
-  margin-bottom:1.4rem;
-  border-left:4px solid var(--accent);
-  padding-left:.8rem;
+font-family:'Playfair Display',serif;
+font-size:1.6rem;
+margin-bottom:1.4rem;
+border-left:4px solid var(--accent);
+padding-left:.8rem;
 }
 
 .items-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:1.2rem;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:1.2rem;
 }
 
 article{
-  background:var(--card-bg);
-  border-radius:16px;
-  overflow:hidden;
-  backdrop-filter:blur(6px);
-  cursor:pointer;
-  border:2px solid transparent;
-  transition:.2s;
+background:var(--card-bg);
+border-radius:16px;
+overflow:hidden;
+backdrop-filter:blur(6px);
+cursor:pointer;
+border:2px solid transparent;
+transition:.2s;
 }
 
 article:hover{
-  transform:translateY(-4px);
-  border-color:var(--hover-border);
-  box-shadow:0 0 0 1px rgba(255,213,79,.3),0 12px 28px rgba(0,0,0,.35);
+transform:translateY(-4px);
+border-color:var(--hover-border);
+box-shadow:0 0 0 1px rgba(255,213,79,.3),0 12px 28px rgba(0,0,0,.35);
 }
 
 figure{
-  height:150px;
-  overflow:hidden;
-  display:flex;
+height:150px;
+overflow:hidden;
+display:flex;
 }
+
 figure img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center;
 }
 
 .info{
-  padding:.8rem 1rem 1rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+padding:.8rem 1rem 1rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-.h1-container {
-  width: 100%;
-  background: linear-gradient(135deg,#7ec09f,#1e2f2a);
-  padding: 50px 25px 40px;
-  text-align: center;
-  box-shadow: 0 25px 60px rgba(0,0,0,.6);
-  margin-bottom: 70px;
-  border-radius: 0 0 45px 45px;
+.h1-container{
+width:100%;
+background:linear-gradient(135deg,#7ec09f,#1e2f2a);
+padding:50px 25px 40px;
+text-align:center;
+box-shadow:0 25px 60px rgba(0,0,0,.6);
+margin-bottom:70px;
+border-radius:0 0 45px 45px;
 }
 
-.h1-container h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+.h1-container h1{
+font-family:'Playfair Display',serif;
+font-size:2.4rem;
+letter-spacing:1px;
+margin-bottom:8px;
 }
 
-.location {
-  font-size: .95rem;
-  opacity: .85;
-  margin-bottom: 25px;
+.location{
+font-size:.95rem;
+opacity:.85;
+margin-bottom:25px;
 }
 
-/* ICON ROW */
-.header-icons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
+.header-icons{
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
 }
 
-.header-icons a {
-  width: 46px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255,255,255,.15);
-  color: #fff;
-  font-size: 1.3rem;
-  text-decoration: none;
-  transition: all .35s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,.35);
+.header-icons a{
+width:46px;
+height:46px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,.15);
+color:#fff;
+font-size:1.3rem;
+text-decoration:none;
+transition:.35s;
+box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 
-.header-icons a:hover {
-  background: #ffd27d;
-  color: #1e2f2a;
-  transform: translateY(-4px) scale(1.1);
-  box-shadow: 0 15px 35px rgba(255,210,125,.55);
+.header-icons a:hover{
+background:#ffd27d;
+color:#1e2f2a;
+transform:translateY(-4px) scale(1.1);
+box-shadow:0 15px 35px rgba(255,210,125,.55);
 }
 
-/* NAV */
 .nav-buttons{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-  margin-top:18px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:18px;
 }
 
 .nav-buttons a{
-  padding:10px 22px;
-  border-radius:25px;
-  background:rgba(255,255,255,.15);
-  border:1.5px solid rgba(255,255,255,.2);
-  color:#fff;
-  text-decoration:none;
-  font-size:.95rem;
-  transition:.3s;
+padding:10px 22px;
+border-radius:25px;
+background:rgba(255,255,255,.15);
+border:1.5px solid rgba(255,255,255,.2);
+color:#fff;
+text-decoration:none;
+font-size:.95rem;
+transition:.3s;
 }
 
 .nav-buttons a.active,
 .nav-buttons a[aria-current="page"]{
-  background:var(--hover-border);
-  color:#1e2f2a;
-  transform:none;
+background:var(--hover-border);
+color:#1e2f2a;
+transform:none;
 }
 
 .nav-buttons a:hover{
-  background:var(--hover-border);
-  color:#1e2f2a;
-  transform:translateY(-2px);
+background:var(--hover-border);
+color:#1e2f2a;
+transform:translateY(-2px);
 }
 
-.name{font-size:.95rem;}
-.price{font-size:.85rem;color:var(--accent);}
+.name{
+font-size:.95rem;
+}
 
-/* MOBILE IMPROVEMENTS */
+.price{
+font-size:.85rem;
+color:var(--accent);
+}
+
 @media (max-width:768px){
-  .h1-container h1 { font-size: 2rem; }
-  .header-icons a { width:40px; height:40px; font-size:1.1rem; }
-  .info{padding:.9rem 1rem;}
+
+.h1-container h1{
+font-size:2rem;
+}
+
+.header-icons a{
+width:40px;
+height:40px;
+font-size:1.1rem;
+}
+
+.info{
+padding:.9rem 1rem;
+}
+
 }
 
 @media (max-width:600px){
-  .items-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:1rem;
-  }
-  figure{height:180px;}
-  .name{font-size:1rem;}
-  .price{font-size:.95rem;}
+
+.items-grid{
+grid-template-columns:repeat(2,1fr);
+gap:1rem;
+}
+
+figure{
+height:180px;
+}
+
+.name{
+font-size:1rem;
+}
+
+.price{
+font-size:.95rem;
+}
+
 }
 
 @media (max-width:420px){
-  .items-grid{
-    grid-template-columns:1fr;
-  }
-  figure{height:180px;}
-  .info{padding:1rem 1rem;}
-  .name{font-size:1.05rem;}
-  .price{font-size:1rem;}
+
+.items-grid{
+grid-template-columns:1fr;
 }
 
-/* STICKY ORDER BUTTON */
+figure{
+height:180px;
+}
+
+.info{
+padding:1rem;
+}
+
+.name{
+font-size:1.05rem;
+}
+
+.price{
+font-size:1rem;
+}
+
+}
+
+/* sticky order button */
+
 #orderWhatsApp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:#fff;
-  border-radius:50px;
-  padding:15px 20px;
-  font-size:1rem;
-  text-decoration:none;
-  box-shadow:0 5px 20px rgba(0,0,0,.3);
-  z-index:999;
-  transition:.3s;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+border-radius:50px;
+padding:15px 20px;
+font-size:1rem;
+text-decoration:none;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+z-index:999;
+transition:.3s;
 }
+
 #orderWhatsApp:hover{
-  transform:translateY(-3px) scale(1.05);
-  box-shadow:0 8px 25px rgba(0,0,0,.4);
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 8px 25px rgba(0,0,0,.4);
 }
+
 </style>
 </head>
 
 <body>
+
 <main>
 
 <header>
+
 <div class="h1-container">
+
 <h1>OUR MEALS</h1>
 
 <div class="header-icons">
-  <a href="https://wa.me/2547XXXXXXXX" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
-  <a href="https://instagram.com/yourpage" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
-  <a href="tel:+2547XXXXXXXX" aria-label="Call">📞</a>
-  <a href="info.html" aria-label="Info">ℹ️</a>
+
+<a href="https://wa.me/254735838772" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+
+<a href="https://instagram.com/tripletwoloresho" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
+
+<a href="tel:+254735838772" aria-label="Call">📞</a>
+
+<a href="info.html" aria-label="Info">ℹ️</a>
+
 </div>
 
 <nav aria-label="Main">
-  <div class="nav-buttons">
-    <a href="index.html" class="active" aria-current="page">🏠Home</a>
-    <a href="menu.html">🍽 Food</a>
-    <a href="drinks.html">🥂 Drinks</a>
-    <a href="accommodation.html">🏨 Accommodation</a>
-  </div>
-</nav>
+
+<div class="nav-buttons">
+
+<a href="index.html" class="active" aria-current="page">🏠Home</a>
+
+<a href="menu.html">🍽 Food</a>
+
+<a href="drinks.html">🥂 Drinks</a>
+
+<a href="accommodation.html">🏨 Accommodation</a>
+
 </div>
+
+</nav>
+
+</div>
+
 </header>
 
-<!-- ALL YOUR SECTIONS BELOW: CHIPS & SIDES, BITINGS, 222 FLAMES, SEAFOOD, BITES, DRINKS, HOT BEVERAGES -->
-<!-- REMAINING EXACTLY AS ORIGINALLY PROVIDED, NO CHANGES -->
-
 <section>
+
 <h2>🍟 Chips & Sides</h2>
+
 <div class="items-grid">
-<article><figure><img src="images/garlic-fries.jpg" alt="garlic-fries"></figure><div class="info"><span class="name">Garlic Fries</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/plain-fries.jpg" alt="plain-fries"></figure><div class="info"><span class="name">Crunchy Slim Fries</span><span class="price">KES 300</span></div></article>
-<article><figure><img src="images/masala-fries.webp" alt="Masala"></figure><div class="info"><span class="name">Masala Fries</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/pepper-chips.jpg" alt="Pepper"></figure><div class="info"><span class="name">Pepper Fries</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/mashed-potatoes.jpg" alt="Mashed"></figure><div class="info"><span class="name">Mashed Potatoes</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/potato-wedges.jpg" alt="Wedges"></figure><div class="info"><span class="name">Potato Wedges</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/saute-potatoes.jpg" alt="Burger"></figure><div class="info"><span class="name">saute potatoes</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/maru-bhajia.jpg" alt="Burger"></figure><div class="info"><span class="name">Maru Bhajia</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/Roast-potatoes.jpg" alt="Burger"></figure><div class="info"><span class="name">Roast potatoes</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/poussin-chips.jpg" alt="Burger"></figure><div class="info"><span class="name">Poussin Fries</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/ugali.jpg" alt="ugali"></figure><div class="info"><span class="name">Ugali</span><span class="price">KES 100</span></div></article>
-<article><figure><img src="images/chapati.jpg" alt="chapati"></figure><div class="info"><span class="name">Chapati</span><span class="price">KES 100</span></div></article>
-<article><figure><img src="images/vegrice.jpeg" alt="vegrice"></figure><div class="info"><span class="name">vegetable rice</span><span class="price">KES 200</span></div></article>
+
+<article><figure><img loading="lazy" src="images/garlic-fries.jpg" alt="Garlic Fries"></figure><div class="info"><span class="name">Garlic Fries</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/plain-fries.jpg" alt="Crunchy Slim Fries"></figure><div class="info"><span class="name">Crunchy Slim Fries</span><span class="price">KES 300</span></div></article>
+
+<article><figure><img loading="lazy" src="images/masala-fries.webp" alt="Masala Fries"></figure><div class="info"><span class="name">Masala Fries</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/pepper-chips.jpg" alt="Pepper Fries"></figure><div class="info"><span class="name">Pepper Fries</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/mashed-potatoes.jpg" alt="Mashed Potatoes"></figure><div class="info"><span class="name">Mashed Potatoes</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/potato-wedges.jpg" alt="Potato Wedges"></figure><div class="info"><span class="name">Potato Wedges</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/saute-potatoes.jpg" alt="Saute Potatoes"></figure><div class="info"><span class="name">Saute Potatoes</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/maru-bhajia.jpg" alt="Maru Bhajia"></figure><div class="info"><span class="name">Maru Bhajia</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/Roast-potatoes.jpg" alt="Roast Potatoes"></figure><div class="info"><span class="name">Roast Potatoes</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/poussin-chips.jpg" alt="Poussin Fries"></figure><div class="info"><span class="name">Poussin Fries</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/ugali.jpg" alt="Ugali"></figure><div class="info"><span class="name">Ugali</span><span class="price">KES 100</span></div></article>
+
+<article><figure><img loading="lazy" src="images/chapati.jpg" alt="Chapati"></figure><div class="info"><span class="name">Chapati</span><span class="price">KES 100</span></div></article>
+
+<article><figure><img loading="lazy" src="images/vegrice.jpeg" alt="Vegetable Rice"></figure><div class="info"><span class="name">Vegetable Rice</span><span class="price">KES 200</span></div></article>
+
 </div>
+
 </section>
 
 <section>
-<h2><img src="https://cdn-icons-png.flaticon.com/512/1046/1046769.png" alt="Bitings Icon" width="26" height="26"> Bitings</h2>
+
+<h2>
+<img src="https://cdn-icons-png.flaticon.com/512/1046/1046769.png" alt="Bitings Icon" width="26" height="26">
+Bitings
+</h2>
+
 <div class="items-grid">
-<article><figure><img src="images/fish-fingers.jpg" alt="fish-fingers"></figure><div class="info"><span class="name">Fish Fingers</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/chicken-nuggets.jpg" alt="chicken-nuggets"></figure><div class="info"><span class="name">Chicken Nuggets</span><span class="price">KES 300</span></div></article>
-<article><figure><img src="images/sausages.jpg" alt="sausages"></figure><div class="info"><span class="name">Beef sausages</span><span class="price">KES 240</span></div></article>
-<article><figure><img src="images/burger.jpg" alt="burger"></figure><div class="info"><span class="name">Bbq and bacon burger</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/butterchicken.jpeg" alt="bch"></figure><div class="info"><span class="name">butter chicken</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/paneerbuttermasala.jpeg" alt="pbm"></figure><div class="info"><span class="name">Panner butter masala</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/sweetandsour.jpeg" alt="S&s"></figure><div class="info"><span class="name">Sweet and sour chicken</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/samosas.jpeg" alt="Samosas"></figure><div class="info"><span class="name">Samosas</span><span class="price">KES 300</span></div></article>
-<article><figure><img src="images/Roast-potatoes.jpg" alt="Burger"></figure><div class="info"><span class="name">Roast potatoes</span><span class="price">KES 400</span></div></article>
-<article><figure><img src="images/poussin-chips.jpg" alt="Burger"></figure><div class="info"><span class="name">Poussin Fries</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/fish-fingers.jpg" alt="Fish Fingers"></figure><div class="info"><span class="name">Fish Fingers</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/chicken-nuggets.jpg" alt="Chicken Nuggets"></figure><div class="info"><span class="name">Chicken Nuggets</span><span class="price">KES 300</span></div></article>
+
+<article><figure><img loading="lazy" src="images/sausages.jpg" alt="Beef Sausages"></figure><div class="info"><span class="name">Beef Sausages</span><span class="price">KES 240</span></div></article>
+
+<article><figure><img loading="lazy" src="images/burger.jpg" alt="BBQ and Bacon Burger"></figure><div class="info"><span class="name">BBQ and Bacon Burger</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/butterchicken.jpeg" alt="Butter Chicken"></figure><div class="info"><span class="name">Butter Chicken</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/paneerbuttermasala.jpeg" alt="Paneer Butter Masala"></figure><div class="info"><span class="name">Paneer Butter Masala</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/sweetandsour.jpeg" alt="Sweet and Sour Chicken"></figure><div class="info"><span class="name">Sweet and Sour Chicken</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/samosas.jpeg" alt="Samosas"></figure><div class="info"><span class="name">Samosas</span><span class="price">KES 300</span></div></article>
+
+<article><figure><img loading="lazy" src="images/Roast-potatoes.jpg" alt="Roast Potatoes"></figure><div class="info"><span class="name">Roast Potatoes</span><span class="price">KES 400</span></div></article>
+
+<article><figure><img loading="lazy" src="images/poussin-chips.jpg" alt="Poussin Fries"></figure><div class="info"><span class="name">Poussin Fries</span><span class="price">KES 400</span></div></article>
+
 </div>
+
 </section>
 
 </main>
 
-<a href="https://wa.me/254713639689" target="_blank" id="orderWhatsApp">💬 Order via WhatsApp</a>
+<a href="https://wa.me/254735838772" target="_blank" id="orderWhatsApp">
+💬 Order via WhatsApp
+</a>
 
 </body>
 </html>
