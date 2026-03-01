@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220">
+
+  <!-- Fork & Knife top-left -->
+  <text x="12" y="38" font-size="28" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🍴</text>
+
+  <!-- Burger top-center -->
+  <text x="88" y="38" font-size="28" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🍔</text>
+
+  <!-- Wine glass top-right -->
+  <text x="172" y="38" font-size="28" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🍷</text>
+
+  <!-- Drum / plate mid-left -->
+  <text x="12" y="110" font-size="28" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🍽️</text>
+
+  <!-- Chef hat center -->
+  <text x="88" y="110" font-size="28" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">👨‍🍳</text>
+
+  <!-- Fries mid-right -->
+  <text x="172" y="110" font-size="28" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🍟</text>
+
+  <!-- Chicken leg bottom-left -->
+  <text x="12" y="182" font-size="28" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🍗</text>
+
+  <!-- Cocktail bottom-center -->
+  <text x="88" y="182" font-size="28" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🍹</text>
+
+  <!-- Cloche / dish bottom-right -->
+  <text x="172" y="182" font-size="28" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🔥</text>
+
+</svg>
