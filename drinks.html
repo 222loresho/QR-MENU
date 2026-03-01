@@ -32,11 +32,25 @@ body{
   min-height:100vh;
   position:relative;
 }
+
+/* subtle lighting layer */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.05), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,.05), transparent 40%);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* restaurant emoji SVG texture overlay */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("images/restaurant-pattern.svg");
+  background: url("restaurant-pattern.svg");
   background-repeat: repeat;
   background-size: 220px;
   opacity: 0.035;
@@ -53,51 +67,9 @@ main{
 }
 
 header{text-align:center;margin-bottom:3rem}
-header h1{
-  font-family:'Lobster',cursive;
-  font-size:clamp(2.3rem,5vw,3.3rem)
-}
-.location{font-family:'Poppins',sans-serif;color:var(--text-muted)}
 
 section{margin-bottom:3rem}
-section h2{
-  font-family:'Poppins',sans-serif;
-  font-size:1.6rem;
-  margin-bottom:1.4rem;
-  border-left:4px solid var(--accent);
-  padding-left:.8rem;
-}
 
-.items-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:1.2rem;
-}
-
-article{
-  background:var(--card-bg);
-  border-radius:16px;
-  overflow:hidden;
-  backdrop-filter:blur(6px);
-  cursor:pointer;
-  border:2px solid transparent;
-  transition:.2s;
-}
-
-article:hover{
-  transform:translateY(-4px);
-  border-color:var(--hover-border);
-  box-shadow:0 0 0 1px rgba(255,213,79,.3),0 12px 28px rgba(0,0,0,.35);
-}
-
-figure{height:150px;overflow:hidden}
-figure img{width:100%;height:100%;object-fit:cover}
-
-.info{
-  padding:.8rem 1rem 1rem;
-  display:flex;
-  justify-content:space-between;
-}
 .h1-container {
   width: 100%;
   background: linear-gradient(135deg,#7ec09f,#1e2f2a);
@@ -151,33 +123,13 @@ figure img{width:100%;height:100%;object-fit:cover}
   box-shadow: 0 15px 35px rgba(255,210,125,.55);
 }
 
-/* MOBILE TUNING */
-@media (max-width: 768px) {
-  .h1-container h1 {
-    font-size: 2rem;
-  }
-
-  .header-icons {
-    gap: 14px;
-  }
-
-  .header-icons a {
-    width: 42px;
-    height: 42px;
-    font-size: 1.15rem;
-  }
-}
-
-
-.name{font-size:.95rem}
-.price{font-size:.85rem;color:var(--accent)}
 /* NAV */
 .nav-buttons{
   display:flex;
   justify-content:center;
   gap:15px;
   flex-wrap:wrap;
-  margin-top:18px; /* FIX */
+  margin-top:18px;
 }
 
 .nav-buttons a{
@@ -191,13 +143,25 @@ figure img{width:100%;height:100%;object-fit:cover}
   transition:.3s;
 }
 
+.nav-buttons a.active,
+.nav-buttons a[aria-current="page"]{
+  background:var(--hover-border);
+  color:#1e2f2a;
+}
+
 .nav-buttons a:hover{
   background:var(--hover-border);
   color:#1e2f2a;
   transform:translateY(-2px);
 }
 
-/* DRINKS HERO SECTION */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+/* HERO SECTION */
 .hero-drinks {
   position: relative;
   height: 400px;
@@ -227,9 +191,11 @@ figure img{width:100%;height:100%;object-fit:cover}
 .hero-drinks h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  border-left: none;
+  padding-left: 0;
 }
 
-/* DRINK CATEGORIES */
+/* DRINK CATEGORY TITLES */
 .drink-section {
   margin-bottom: 3rem;
 }
@@ -237,222 +203,279 @@ figure img{width:100%;height:100%;object-fit:cover}
 .category-title {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  color: var(--text-light);
+  gap: .8rem;
+  margin-bottom: 1.4rem;
+  border-left: 4px solid var(--accent);
+  padding-left: .8rem;
+}
+
+.category-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  border-left: none;
+  padding-left: 0;
+  margin-bottom: 0;
 }
 
 .category-title span {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
-/* DRINKS GRID */
-.drinks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+/* ITEMS GRID — matches menu.html exactly */
+.items-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1.2rem;
 }
 
-.drink-card {
-  background: var(--card-bg);
-  border-radius: 16px;
-  overflow: hidden;
-  backdrop-filter: blur(6px);
-  border: 2px solid rgba(255,213,79,.2);
-  transition: 0.3s;
-  padding: 1.5rem;
+article{
+  background:var(--card-bg);
+  border-radius:16px;
+  overflow:hidden;
+  backdrop-filter:blur(6px);
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:.2s;
 }
 
-.drink-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--hover-border);
-  box-shadow: 0 12px 28px rgba(255,107,107,.3);
+article:hover{
+  transform:translateY(-4px);
+  border-color:var(--hover-border);
+  box-shadow:0 0 0 1px rgba(255,213,79,.3),0 12px 28px rgba(0,0,0,.35);
 }
 
-.drink-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: #FFD54F;
+figure{
+  height:150px;
+  overflow:hidden;
+  display:flex;
 }
 
-.drink-card p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
+figure img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
 }
 
-.drink-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+.info{
+  padding:.8rem 1rem 1rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.drink-price {
-  font-size: 1.2rem;
-  color: var(--accent);
-  font-weight: 600;
-  margin-top: 1rem;
-}
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 5;
+.name{font-size:.95rem}
+.price{font-size:.85rem;color:var(--accent)}
+
+/* sticky order button */
+#orderWhatsApp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  border-radius:50px;
+  padding:15px 20px;
+  font-size:1rem;
+  text-decoration:none;
+  box-shadow:0 5px 20px rgba(0,0,0,.3);
+  z-index:999;
+  transition:.3s;
 }
 
+#orderWhatsApp:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 8px 25px rgba(0,0,0,.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .h1-container h1 {
+    font-size: 2rem;
+  }
+  .header-icons {
+    gap: 14px;
+  }
+  .header-icons a {
+    width: 42px;
+    height: 42px;
+    font-size: 1.15rem;
+  }
+  .hero-drinks {
+    height: 260px;
+  }
+  .hero-drinks h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .items-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem;
+  }
+  figure{
+    height:180px;
+  }
+  .name{font-size:1rem}
+  .price{font-size:.95rem}
+}
+
+@media (max-width: 420px) {
+  .items-grid{
+    grid-template-columns:1fr;
+  }
+  figure{
+    height:180px;
+  }
+  .info{
+    padding:1rem;
+  }
+  .name{font-size:1.05rem}
+  .price{font-size:1rem}
+}
 </style>
 </head>
 
 <body>
 <main>
 
-<header>
-  
+  <header>
+    <div class="h1-container">
+      <h1>Drinks</h1>
 
-  <!-- HEADER -->
-  <div class="h1-container">
-    <h1>Drinks</h1>
-  
+      <div class="header-icons">
+        <a href="https://wa.me/254735838772" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+        <a href="https://instagram.com/tripletwoloresho" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
+        <a href="tel:+254735838772" aria-label="Call">📞</a>
+        <a href="info.html" aria-label="Info">ℹ️</a>
+      </div>
 
-   <div class="header-icons">
-  <a href="https://wa.me/2547XXXXXXXX" aria-label="WhatsApp">💬</a>
-  <a href="https://instagram.com/yourpage" aria-label="Instagram">📸</a>
-  <a href="tel:+2547XXXXXXXX" aria-label="Call">📞</a>
-  <a href="info.html" aria-label="Info">ℹ️</a>
-</div>
-<!-- NAVIGATION BUTTONS -->
-    <div class="nav-buttons">
-      <a href= "index.html">🏠Home</a>
-      <a href="menu.html">🍽 Food</a>
-      <a href="drinks.html" class="active" aria-current="page">🥂 Drinks</a>
-      <a href="accommodation.html">🏨 Accommodation</a>
-      <a href="info.html">ℹ️ Info</a>
+      <div class="nav-buttons">
+        <a href="index.html">🏠 Home</a>
+        <a href="menu.html">🍽 Food</a>
+        <a href="drinks.html" class="active" aria-current="page">🥂 Drinks</a>
+        <a href="accommodation.html">🏨 Accommodation</a>
+        <a href="info.html">ℹ️ Info</a>
+      </div>
     </div>
+  </header>
 
-  </div>
-</header>
+  <!-- HERO SECTION -->
+  <section class="hero-drinks">
+    <div class="hero-content">
+      <h2>🍹 Refresh Your Moments</h2>
+    </div>
+  </section>
 
-<!-- HERO SECTION -->
-<section class="hero-drinks">
-  <div class="hero-content">
-    <h2>🍹 Refresh Your Moments</h2>
-  </div>
-</section>
+  <!-- SMOOTHIES & JUICES -->
+  <section class="drink-section">
+    <div class="category-title">
+      <span>🥤</span>
+      <h2>Smoothies &amp; Juices</h2>
+    </div>
+    <div class="items-grid">
 
-<!-- SMOOTHIES & JUICES -->
-<section class="drink-section">
-  <div class="category-title">
-    <span>🥤</span>
-    <h2>Smoothies & Juices</h2>
-  </div>
-  <div class="drinks-grid">
-    <div class="drink-card">
-      <div class="drink-icon">🥭</div>
-      <h3>Mango Smoothie</h3>
-      <p>Creamy mango blend with yogurt and a splash of honey</p>
-      <div class="drink-price">KES 350</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">🍑</div>
-      <h3>Passion Juice</h3>
-      <p>Refreshing passion fruit juice with fresh lime</p>
-      <div class="drink-price">KES 300</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">🫐</div>
-      <h3>Berry Smoothie</h3>
-      <p>Mixed berries blended with banana and coconut milk</p>
-      <div class="drink-price">KES 380</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">🥕</div>
-      <h3>Carrot Orange Juice</h3>
-      <p>Fresh carrot and orange juice with a hint of ginger</p>
-      <div class="drink-price">KES 320</div>
-    </div>
-  </div>
-</section>
+      <article>
+        <figure><img loading="lazy" src="images/mango-smoothie.jpg" alt="Mango Smoothie"></figure>
+        <div class="info"><span class="name">Mango Smoothie</span><span class="price">KES 350</span></div>
+      </article>
 
-<!-- HOT BEVERAGES -->
-<section class="drink-section">
-  <div class="category-title">
-    <span>☕</span>
-    <h2>Hot Beverages</h2>
-  </div>
-  <div class="drinks-grid">
-    <div class="drink-card">
-      <div class="drink-icon">☕</div>
-      <h3>Espresso</h3>
-      <p>Rich, strong espresso shot - perfectly concentrated</p>
-      <div class="drink-price">KES 200</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">🥛</div>
-      <h3>Coffee with Milk</h3>
-      <p>Smooth espresso with steamed milk and light foam</p>
-      <div class="drink-price">KES 250</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">🫖</div>
-      <h3>Black Tea</h3>
-      <p>Premium black tea blend, steeped to perfection</p>
-      <div class="drink-price">KES 150</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">🌿</div>
-      <h3>Herbal Tea</h3>
-      <p>Soothing chamomile and herbal tea blend</p>
-      <div class="drink-price">KES 180</div>
-    </div>
-  </div>
-</section>
+      <article>
+        <figure><img loading="lazy" src="images/passion-juice.jpg" alt="Passion Juice"></figure>
+        <div class="info"><span class="name">Passion Juice</span><span class="price">KES 300</span></div>
+      </article>
 
-<!-- COCKTAILS & SPIRITS -->
-<section class="drink-section">
-  <div class="category-title">
-    <span>🍹</span>
-    <h2>Cocktails & Spirits</h2>
-  </div>
-  <div class="drinks-grid">
-    <div class="drink-card">
-      <div class="drink-icon">🌿</div>
-      <h3>Mojito</h3>
-      <p>Fresh mint, lime, rum, and soda water with a touch of sugar</p>
-      <div class="drink-price">KES 650</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">🍓</div>
-      <h3>Strawberry Daiquiri</h3>
-      <p>Smooth strawberry blend with rum and lime juice</p>
-      <div class="drink-price">KES 700</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">🥥</div>
-      <h3>Piña Colada</h3>
-      <p>Creamy coconut cream, pineapple juice, and rum</p>
-      <div class="drink-price">KES 750</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">🍋</div>
-      <h3>Margarita</h3>
-      <p>Classic tequila, lime, and triple sec on the rocks</p>
-      <div class="drink-price">KES 800</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">🌊</div>
-      <h3>Long Island Iced Tea</h3>
-      <p>Complex blend of multiple spirits with a smooth finish</p>
-      <div class="drink-price">KES 900</div>
-    </div>
-    <div class="drink-card">
-      <div class="drink-icon">✨</div>
-      <h3>Aperol Spritz</h3>
-      <p>Light and bubbly with Aperol, Prosecco, and soda</p>
-      <div class="drink-price">KES 850</div>
-    </div>
-  </div>
-</section>
+      <article>
+        <figure><img loading="lazy" src="images/berry-smoothie.jpg" alt="Berry Smoothie"></figure>
+        <div class="info"><span class="name">Berry Smoothie</span><span class="price">KES 380</span></div>
+      </article>
 
+      <article>
+        <figure><img loading="lazy" src="images/carrot-orange-juice.jpg" alt="Carrot Orange Juice"></figure>
+        <div class="info"><span class="name">Carrot Orange Juice</span><span class="price">KES 320</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- HOT BEVERAGES -->
+  <section class="drink-section">
+    <div class="category-title">
+      <span>☕</span>
+      <h2>Hot Beverages</h2>
+    </div>
+    <div class="items-grid">
+
+      <article>
+        <figure><img loading="lazy" src="images/espresso.jpg" alt="Espresso"></figure>
+        <div class="info"><span class="name">Espresso</span><span class="price">KES 200</span></div>
+      </article>
+
+      <article>
+        <figure><img loading="lazy" src="images/coffee-milk.jpg" alt="Coffee with Milk"></figure>
+        <div class="info"><span class="name">Coffee with Milk</span><span class="price">KES 250</span></div>
+      </article>
+
+      <article>
+        <figure><img loading="lazy" src="images/black-tea.jpg" alt="Black Tea"></figure>
+        <div class="info"><span class="name">Black Tea</span><span class="price">KES 150</span></div>
+      </article>
+
+      <article>
+        <figure><img loading="lazy" src="images/herbal-tea.jpg" alt="Herbal Tea"></figure>
+        <div class="info"><span class="name">Herbal Tea</span><span class="price">KES 180</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- COCKTAILS & SPIRITS -->
+  <section class="drink-section">
+    <div class="category-title">
+      <span>🍹</span>
+      <h2>Cocktails &amp; Spirits</h2>
+    </div>
+    <div class="items-grid">
+
+      <article>
+        <figure><img loading="lazy" src="images/mojito.jpg" alt="Mojito"></figure>
+        <div class="info"><span class="name">Mojito</span><span class="price">KES 650</span></div>
+      </article>
+
+      <article>
+        <figure><img loading="lazy" src="images/strawberry-daiquiri.jpg" alt="Strawberry Daiquiri"></figure>
+        <div class="info"><span class="name">Strawberry Daiquiri</span><span class="price">KES 700</span></div>
+      </article>
+
+      <article>
+        <figure><img loading="lazy" src="images/pina-colada.jpg" alt="Piña Colada"></figure>
+        <div class="info"><span class="name">Piña Colada</span><span class="price">KES 750</span></div>
+      </article>
+
+      <article>
+        <figure><img loading="lazy" src="images/margarita.jpg" alt="Margarita"></figure>
+        <div class="info"><span class="name">Margarita</span><span class="price">KES 800</span></div>
+      </article>
+
+      <article>
+        <figure><img loading="lazy" src="images/long-island.jpg" alt="Long Island Iced Tea"></figure>
+        <div class="info"><span class="name">Long Island Iced Tea</span><span class="price">KES 900</span></div>
+      </article>
+
+      <article>
+        <figure><img loading="lazy" src="images/aperol-spritz.jpg" alt="Aperol Spritz"></figure>
+        <div class="info"><span class="name">Aperol Spritz</span><span class="price">KES 850</span></div>
+      </article>
+
+    </div>
+  </section>
 
 </main>
+
+<a href="https://wa.me/254735838772" target="_blank" id="orderWhatsApp">
+  💬 Order via WhatsApp
+</a>
+
 </body>
 </html>
