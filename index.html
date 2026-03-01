@@ -46,6 +46,23 @@ background-position:center;
 background-repeat:no-repeat;
 }
 
+/* ===== RESTAURANT EMOJI PATTERN OVERLAY ===== */
+
+body::before{
+content:"";
+position:absolute;
+inset:0;
+
+background:url("restaurant-pattern.svg");
+background-repeat:repeat;
+background-size:220px;
+
+opacity:0.035;
+
+pointer-events:none;
+z-index:0;
+}
+
 /* vignette */
 
 body::after{
